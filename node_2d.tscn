@@ -1,23 +1,90 @@
-[gd_scene format=3 uid="uid://bcyltrhx2tevw"]
+[gd_scene format=3 uid="uid://c8tty3o0yql8e"]
 
 [ext_resource type="Texture2D" uid="uid://cxa5ym0nv4csb" path="res://imagens/Background_teste.png" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://c0s6s2d1naje7" path="res://imagens/New Piskel-1.png.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://lt62708rmgbf" path="res://teste.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://mdvfjjb00vom" path="res://imagens/nota_amarela.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://cee042oatk0ad" path="res://imagens/espaço_clicar_nota.png" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://15h078tu631n" path="res://nota_vermelha.gd" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dnmih7uc6t6ww" path="res://imagens/nota_vermalha.png" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://crg3elyjqdvpa" path="res://nota_verde.gd" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cesk43txfx6y5" path="res://imagens/nota_verde.png" id="8_ir8iy"]
+[ext_resource type="Script" uid="uid://do3vsrs2q16ah" path="res://nota_azul.gd" id="9_hqns4"]
+[ext_resource type="Texture2D" uid="uid://cd1l7nakbrmv3" path="res://imagens/nota_azul.png" id="10_x0ka3"]
 
 [node name="Node2D" type="Node2D" unique_id=29245868]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=740530563]
+[node name="background" type="Area2D" parent="." unique_id=740530563]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1130002752]
+[node name="sprite_background" type="Sprite2D" parent="background" unique_id=1130002752]
 texture_filter = 3
 position = Vector2(576.99994, 323)
 scale = Vector2(35.9375, 20.1875)
 texture = ExtResource("1_0e48y")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1118436189]
-position = Vector2(285, 333)
+[node name="nota_amarela" type="CharacterBody2D" parent="." unique_id=1118436189]
+position = Vector2(581, 1)
+script = ExtResource("2_epypp")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=969411188]
+[node name="sprite_nota_amarela" type="Sprite2D" parent="nota_amarela" unique_id=969411188]
 texture_filter = 3
-position = Vector2(67.5, 44.000008)
-scale = Vector2(5.21875, 5.5624995)
-texture = ExtResource("2_epypp")
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("3_0hol4")
+
+[node name="teclado_amarelo" type="CharacterBody2D" parent="." unique_id=400470515]
+texture_filter = 3
+position = Vector2(581, 456)
+
+[node name="sprite_teclado_amarelo" type="Sprite2D" parent="teclado_amarelo" unique_id=1480187889]
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="nota_vermelha" type="CharacterBody2D" parent="." unique_id=664431660]
+position = Vector2(381, 1)
+script = ExtResource("5_kdubu")
+
+[node name="sprite_nota_vermelha" type="Sprite2D" parent="nota_vermelha" unique_id=1911545464]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("6_d21ai")
+
+[node name="teclado_vermelho" type="CharacterBody2D" parent="." unique_id=1008875293]
+position = Vector2(381, 456)
+
+[node name="sprite_teclado_vermelho" type="Sprite2D" parent="teclado_vermelho" unique_id=168926482]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="nota_verde" type="CharacterBody2D" parent="." unique_id=129216733]
+position = Vector2(781, 1)
+script = ExtResource("7_d21ai")
+
+[node name="sprite_nota_verde" type="Sprite2D" parent="nota_verde" unique_id=366580483]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("8_ir8iy")
+
+[node name="teclado_verde" type="CharacterBody2D" parent="." unique_id=1156070782]
+position = Vector2(781, 456)
+
+[node name="sprite_teclado_verde" type="Sprite2D" parent="teclado_verde" unique_id=1783108050]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="nota_azul" type="CharacterBody2D" parent="." unique_id=659208862]
+position = Vector2(981, 1)
+script = ExtResource("9_hqns4")
+
+[node name="sprite_nota_azul" type="Sprite2D" parent="nota_azul" unique_id=1464357065]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("10_x0ka3")
+
+[node name="teclado_azul" type="CharacterBody2D" parent="." unique_id=586355773]
+position = Vector2(981, 456)
+
+[node name="sprite_teclado_azul" type="Sprite2D" parent="teclado_azul" unique_id=1266659572]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
