@@ -19,6 +19,6 @@ A medida que as features vão sendo implementadas é importante atualizar a issu
 Obrigado ao luqhe pelo template!
 ## Finalizando uma issue:
 Ao terminar todas as features de uma issue atulize o kanban e mostre pro seus colegas o que você implementou!
-Com isso de merge das features na main e comemore!!
+Com isso de merge das features na master e comemore!!
 ## Comunique:
 Se sente algo está incrível, ruim, faltando algo, ou com coisa demais, fale com os seus colegas!!!
