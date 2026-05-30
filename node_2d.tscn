@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bcyltrhx2tevw"]
+
+[ext_resource type="Texture2D" path="res://imagens/Background_teste.png" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://c0s6s2d1naje7" path="res://imagens/New Piskel-1.png.png" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=29245868]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=740530563]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1130002752]
+texture_filter = 3
+position = Vector2(576.99994, 323)
+scale = Vector2(35.9375, 20.1875)
+texture = ExtResource("1_0e48y")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1118436189]
+position = Vector2(285, 333)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=969411188]
+texture_filter = 3
+position = Vector2(67.5, 44.000008)
+scale = Vector2(5.21875, 5.5624995)
+texture = ExtResource("2_epypp")
