@@ -20,4 +20,3 @@ scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_ng0wg")
 
 [connection signal="area_entered" from="Sprite2D/Hurtbox2D2" to="Sprite2D" method="_on_hurtbox_2d_2_area_entered"]
-[connection signal="area_shape_entered" from="Sprite2D/Hurtbox2D2" to="Sprite2D" method="_on_hurtbox_2d_2_area_shape_entered"]

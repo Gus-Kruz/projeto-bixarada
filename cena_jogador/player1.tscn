@@ -18,3 +18,5 @@ script = ExtResource("2_pqb02")
 [node name="hurtbox" type="CollisionShape2D" parent="Sprite2D/Hurtbox2D1" unique_id=747823943]
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_ng0wg")
+
+[connection signal="area_entered" from="Sprite2D/Hurtbox2D1" to="Sprite2D" method="_on_hurtbox_2d_1_area_entered"]
