@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://c3c4wdfuye3h6"]
 
-[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://icon.svg" id="1_yo6f2"]
+[ext_resource type="Texture2D" uid="uid://bxbsfh5boret7" path="res://imagens/Logo placeholder.png" id="1_kaf03"]
+[ext_resource type="Texture2D" uid="uid://bvus02rewp3d0" path="res://imagens/jogar placeholde.png" id="2_5peh6"]
+[ext_resource type="Texture2D" uid="uid://bpq4u2iy5h40d" path="res://imagens/Configurar placeholder.png" id="3_35p1k"]
+[ext_resource type="Texture2D" uid="uid://yceftpskd2sv" path="res://imagens/Creditos placeholder.png" id="4_5u2e6"]
+[ext_resource type="Texture2D" uid="uid://bnyg5crf47few" path="res://imagens/Versão placeholder.png" id="5_t1ba6"]
+[ext_resource type="Texture2D" uid="uid://bv2dwp80ff1qs" path="res://imagens/sair placheolder.png" id="6_gy82u"]
 
 [node name="MarginContainer" type="MarginContainer" unique_id=1585832246]
 anchors_preset = 15
@@ -15,19 +20,27 @@ theme_override_constants/margin_bottom = 80
 
 [node name="Logo" type="TextureRect" parent="." unique_id=1211146227]
 layout_mode = 2
-texture = ExtResource("1_yo6f2")
+texture = ExtResource("1_kaf03")
 
 [node name="Jogar" type="TextureRect" parent="." unique_id=583242618]
 layout_mode = 2
+texture = ExtResource("2_5peh6")
 
 [node name="Configurações" type="TextureRect" parent="." unique_id=872956947]
 layout_mode = 2
+texture = ExtResource("3_35p1k")
 
 [node name="Créditos" type="TextureRect" parent="." unique_id=868492477]
 layout_mode = 2
+texture = ExtResource("4_5u2e6")
 
 [node name="Versão" type="TextureRect" parent="." unique_id=1223995907]
 layout_mode = 2
+texture = ExtResource("5_t1ba6")
 
-[node name="Ilustração" type="TextureRect" parent="." unique_id=948827284]
+[node name="Sair" type="TextureRect" parent="." unique_id=948827284]
+layout_mode = 2
+texture = ExtResource("6_gy82u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=166079408]
 layout_mode = 2
