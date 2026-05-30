@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcyltrhx2tevw"]
 
-[ext_resource type="Texture2D" path="res://imagens/Background_teste.png" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cxa5ym0nv4csb" path="res://imagens/Background_teste.png" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://c0s6s2d1naje7" path="res://imagens/New Piskel-1.png.png" id="2_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=29245868]
