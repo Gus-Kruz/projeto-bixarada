@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bcyltrhx2tevw"]
+
+[ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://cuvmupkmb8er0" path="res://cena_jogador/player2.tscn" id="2_0tn1g"]
+
+[node name="Node2D" type="Node2D" unique_id=1532618862]
+
+[node name="Player1" parent="." unique_id=966840436 instance=ExtResource("1_0e48y")]
+
+[node name="Player2" parent="." unique_id=1246125307 instance=ExtResource("2_0tn1g")]

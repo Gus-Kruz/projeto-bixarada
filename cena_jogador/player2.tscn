@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cuvmupkmb8er0"]
+
+[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://cena_jogador/icon.svg" id="1_rihsh"]
+[ext_resource type="Script" uid="uid://dunvdjtsyhv4g" path="res://cena_jogador/sprite_2d.gd" id="2_bsrsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0wg"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D" unique_id=966840436]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995142931]
+scale = Vector2(0.938, 1.875)
+texture = ExtResource("1_rihsh")
+script = ExtResource("2_bsrsl")
+
+[node name="Hurtbox2D2" type="Area2D" parent="Sprite2D" unique_id=94290914]
+
+[node name="hurtbox" type="CollisionShape2D" parent="Sprite2D/Hurtbox2D2" unique_id=747823943]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_ng0wg")
+
+[connection signal="area_entered" from="Sprite2D/Hurtbox2D2" to="Sprite2D" method="_on_hurtbox_2d_2_area_entered"]
+[connection signal="area_shape_entered" from="Sprite2D/Hurtbox2D2" to="Sprite2D" method="_on_hurtbox_2d_2_area_shape_entered"]

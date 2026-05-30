@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ge8ksneh15bv"]
 
-[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://icon.svg" id="1_ng0wg"]
+[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://cena_jogador/icon.svg" id="1_ng0wg"]
 [ext_resource type="Script" uid="uid://b7em22ppvsmnv" path="res://sprite_2d.gd" id="2_pqb02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0wg"]
@@ -13,7 +13,8 @@ scale = Vector2(0.938, 1.875)
 texture = ExtResource("1_ng0wg")
 script = ExtResource("2_pqb02")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=94290914]
+[node name="Hurtbox2D1" type="Area2D" parent="Sprite2D" unique_id=94290914]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=747823943]
+[node name="hurtbox" type="CollisionShape2D" parent="Sprite2D/Hurtbox2D1" unique_id=747823943]
+scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_ng0wg")
