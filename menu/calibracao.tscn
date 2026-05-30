@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://betx1c22sjjdh"]
+
+[ext_resource type="Script" uid="uid://q26b3tl4cc17" path="res://scripts/calibracao.gd" id="1_0ge7o"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0ge7o"]
+
+[node name="Calibracao" type="Node2D" unique_id=587787431]
+script = ExtResource("1_0ge7o")
+
+[node name="Button" type="Button" parent="." unique_id=1894507924]
+offset_left = 428.0
+offset_top = 234.0
+offset_right = 508.0
+offset_bottom = 314.0
+text = "butão"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1778945615]
+visible = false
+position = Vector2(792, 237)
+scale = Vector2(158.5, 158.5)
+texture = SubResource("PlaceholderTexture2D_0ge7o")
+
+[node name="Timer" type="Timer" parent="." unique_id=742412040]
+
+[connection signal="pressed" from="Button" to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
