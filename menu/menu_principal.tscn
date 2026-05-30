@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c3c4wdfuye3h6"]
+
+[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://icon.svg" id="1_yo6f2"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=1585832246]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1211146227]
+layout_mode = 2
+texture = ExtResource("1_yo6f2")
+
+[node name="Jogar" type="TextureRect" parent="." unique_id=583242618]
+layout_mode = 2
+
+[node name="Configurações" type="TextureRect" parent="." unique_id=872956947]
+layout_mode = 2
+
+[node name="Créditos" type="TextureRect" parent="." unique_id=868492477]
+layout_mode = 2
+
+[node name="Versão" type="TextureRect" parent="." unique_id=1223995907]
+layout_mode = 2
+
+[node name="Ilustração" type="TextureRect" parent="." unique_id=948827284]
+layout_mode = 2
