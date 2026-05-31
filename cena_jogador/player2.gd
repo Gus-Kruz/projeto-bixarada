@@ -19,9 +19,9 @@ func _ready() -> void:
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
 	if orientacao == "direita":
-		fraco.position = Vector2(player_x+180, player_y+60)
+		fraco.position = Vector2(player_x+120, player_y+60)
 	else:
-		fraco.position = Vector2(player_x-180, player_y+60)
+		fraco.position = Vector2(player_x-120, player_y+60)
 	get_parent().add_child(fraco)
 	await get_tree().create_timer(bpm).timeout
 	fraco.queue_free()
@@ -29,9 +29,9 @@ func ataque_fraco(player_x, player_y):
 func ataque_forte(player_x, player_y):
 	var forte = ataqueforte.instantiate()
 	if orientacao == "direita":
-		forte.position = Vector2(player_x+180, player_y-60)
+		forte.position = Vector2(player_x+120, player_y-60)
 	else:
-		forte.position = Vector2(player_x-180, player_y-60)
+		forte.position = Vector2(player_x-120, player_y-60)
 	get_parent().add_child(forte)
 	await get_tree().create_timer(bpm).timeout
 	forte.queue_free()

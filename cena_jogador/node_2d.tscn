@@ -31,12 +31,14 @@ scale = Vector2(158.5, 158.5)
 texture = SubResource("PlaceholderTexture2D_0tn1g")
 
 [node name="Barrante" parent="." unique_id=832938600 instance=ExtResource("3_12ny2")]
+z_index = 1
 position = Vector2(960, 1000)
 
 [node name="Nota" parent="." unique_id=8498666 instance=ExtResource("4_i80d3")]
 position = Vector2(2000, 1000)
 
 [node name="Nota2" parent="." unique_id=1166741449 instance=ExtResource("5_shl6t")]
+position = Vector2(-80, 1000)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1292113719]
 
