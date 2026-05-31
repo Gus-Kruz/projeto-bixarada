@@ -7,9 +7,9 @@ func _ready() -> void:
 	timer.start()
 	await get_tree().create_timer(0.20).timeout
 	crescendo = "crescendo"
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.1143).timeout
 	crescendo = "diminuindo"
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.1143).timeout
 	crescendo = "neutro"
 var scaling = 4
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,8 +26,8 @@ func _on_timer_timeout() -> void:
 	timer.start()
 	await get_tree().create_timer(0.20).timeout
 	crescendo = "crescendo"
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.1143).timeout
 	crescendo = "diminuindo"
-	await get_tree().create_timer(0.15).timeout
+	await get_tree().create_timer(0.1143).timeout
 	crescendo = "neutro"
 	

@@ -18,6 +18,8 @@ func _ready():
 	add_child(transicao)
 	var fade = transicao.get_node("fade")
 	fade.play_backwards('fade')
+	await fade.animation_finished
+	get_node("transicao").queue_free()
 	
 func _on_jogar_pressed() -> void:
 	transicao('res://menu/selecao.tscn')
