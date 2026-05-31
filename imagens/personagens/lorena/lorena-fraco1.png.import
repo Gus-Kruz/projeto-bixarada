@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ec1e7qvtnq1"
-path="res://.godot/imported/lorena_normal2.png-488b9e36af6864ae307fd4993d8140d6.ctex"
+uid="uid://5yaxu6wer8sd"
+path="res://.godot/imported/lorena-fraco1.png-4a1132b90e56a730269ebf5c169e27e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/personagens/lorena/lorena_normal2.png"
-dest_files=["res://.godot/imported/lorena_normal2.png-488b9e36af6864ae307fd4993d8140d6.ctex"]
+source_file="res://imagens/personagens/lorena/lorena-fraco1.png"
+dest_files=["res://.godot/imported/lorena-fraco1.png-4a1132b90e56a730269ebf5c169e27e4.ctex"]
 
 [params]
 

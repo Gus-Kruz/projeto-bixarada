@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cee042oatk0ad"
-path="res://.godot/imported/espaço_clicar_nota.png-fdcf220a7a59f68b6e6b39b17c798b8c.ctex"
+uid="uid://b6fqegug3coxb"
+path="res://.godot/imported/lorena-normal2.png-b80936326ff3a9205cd910da5d53a3d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/personagens/lorena/espaço_clicar_nota.png"
-dest_files=["res://.godot/imported/espaço_clicar_nota.png-fdcf220a7a59f68b6e6b39b17c798b8c.ctex"]
+source_file="res://imagens/personagens/lorena/lorena-normal2.png"
+dest_files=["res://.godot/imported/lorena-normal2.png-b80936326ff3a9205cd910da5d53a3d4.ctex"]
 
 [params]
 

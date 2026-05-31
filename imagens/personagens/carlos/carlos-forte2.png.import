@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byvww4erokrgv"
-path="res://.godot/imported/carlos_forte1.png-b1534b6dc8636a1296918ebf0662c66f.ctex"
+uid="uid://co2ggnco57fmt"
+path="res://.godot/imported/carlos-forte2.png-39f51f80e03167a9dfba7a9ead814a72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/personagens/carlos/carlos_forte1.png"
-dest_files=["res://.godot/imported/carlos_forte1.png-b1534b6dc8636a1296918ebf0662c66f.ctex"]
+source_file="res://imagens/personagens/carlos/carlos-forte2.png"
+dest_files=["res://.godot/imported/carlos-forte2.png-39f51f80e03167a9dfba7a9ead814a72.ctex"]
 
 [params]
 
