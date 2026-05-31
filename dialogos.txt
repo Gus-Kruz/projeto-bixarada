@@ -1,0 +1,20 @@
+[
+['Lorena', 'Vocês parecem desanimados. O que aconteceu?'],
+['Carlos','Humm... Eu não sei... Só estou sem vontade...']
+['Rogerinho','Eu também! O que está acontecendo comigo para estar assim?']
+['Lorena','Eu to falando com VOCÊS, me parecem estar desanimados... Porque?']
+['Lorena','Será que vocês realmente vieram aqui para um joguinho de ritmo?']
+['Lorena','Provavelmente não, né? Hehehehe...']
+['Lorena','Então vamos para o que realmente importa!!']
+[player1 + player2,'À luta!']
+]
+
+['Carlos','Você decorou alguma música ou apenas balança os braços aleatóriamente?...']
+['Rogerinho','Eu decorei sim! E pelo menos eu não ando dormindo que nem você.']
+
+['Carlos','Para onde você fica olhando?... Procurando ajuda dos seus amigos?…']
+['Lorena','Hehehe, você nem sabe quanto! Espero que VOCÊ trate de ganhar para mim.']
+
+['Lorena','Você não está velho demais para continuar com maracas? Quando vai conseguir um instrumento de verdade?']
+['Rogerinho','Hum! E você não está velha demais para conversar com o nada? Quando vai parar de falar com as paredes?']
+

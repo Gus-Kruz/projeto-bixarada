@@ -2,6 +2,7 @@ extends Node2D
 var player1 = ''
 var player2 = ''
 var cor = false
+var TRANSICAO = preload('res://menu/transicao.tscn')
 
 var carlos_escolhido = preload("res://imagens/personagens/carlos/carlos-escolhido.png")
 var lorena_escolhido = preload("res://imagens/personagens/lorena/lorena-escolhido.png")
@@ -10,6 +11,12 @@ var rogerio_escolhido = preload("res://imagens/personagens/rogerio/rogerio-escol
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.start()
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node('fade')
+	fade.play_backwards('fade')
+	await fade.animation_finished
+	get_node("transicao").queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

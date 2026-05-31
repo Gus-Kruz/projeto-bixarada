@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb7n1yfrvrule"
-path="res://.godot/imported/background-luta.png-b72081589213e5fb76ab0abc9e9d8cd3.ctex"
+uid="uid://dtkkm2it0glib"
+path="res://.godot/imported/calibrar placeholder.png-796447db77783927deb64f05a9a5dfdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/backgrounds/background-luta.png"
-dest_files=["res://.godot/imported/background-luta.png-b72081589213e5fb76ab0abc9e9d8cd3.ctex"]
+source_file="res://imagens/calibrar placeholder.png"
+dest_files=["res://.godot/imported/calibrar placeholder.png-796447db77783927deb64f05a9a5dfdf.ctex"]
 
 [params]
 
