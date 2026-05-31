@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://c8tty3o0yql8e"]
+
+[ext_resource type="Texture2D" uid="uid://cxa5ym0nv4csb" path="res://imagens/Background_teste.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://bpoft4ep810br" path="res://nota_amarela.gd" id="2_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://mdvfjjb00vom" path="res://imagens/nota_amarela.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://cee042oatk0ad" path="res://imagens/espaço_clicar_nota.png" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://bi1m1jcokrfa5" path="res://teclado_amarelo.gd" id="4_hqns4"]
+[ext_resource type="Script" uid="uid://15h078tu631n" path="res://nota_vermelha.gd" id="5_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dnmih7uc6t6ww" path="res://imagens/nota_vermalha.png" id="6_d21ai"]
+[ext_resource type="Script" uid="uid://crg3elyjqdvpa" path="res://nota_verde.gd" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cesk43txfx6y5" path="res://imagens/nota_verde.png" id="8_ir8iy"]
+[ext_resource type="Script" uid="uid://do3vsrs2q16ah" path="res://nota_azul.gd" id="9_hqns4"]
+[ext_resource type="Texture2D" uid="uid://cd1l7nakbrmv3" path="res://imagens/nota_azul.png" id="10_x0ka3"]
+[ext_resource type="Script" uid="uid://dpeoru7h7r8g" path="res://mensagem_boa.gd" id="12_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://ce46f7grb8pda" path="res://imagens/yay!.png" id="12_x0ka3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(47.75, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
+size = Vector2(51, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(48, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(40, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(50, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(53, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(43, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(52, 59)
+
+[node name="Node2D" type="Node2D" unique_id=29245868]
+metadata/_edit_horizontal_guides_ = [-37.0]
+
+[node name="background" type="Area2D" parent="." unique_id=740530563]
+
+[node name="sprite_background" type="Sprite2D" parent="background" unique_id=1130002752]
+texture_filter = 3
+position = Vector2(576.25, 320)
+scale = Vector2(35.79687, 20.0625)
+texture = ExtResource("1_0e48y")
+
+[node name="nota_amarela" type="Area2D" parent="." unique_id=970701782 node_paths=PackedStringArray("mensagem_boa")]
+position = Vector2(481, 1)
+script = ExtResource("2_ir8iy")
+mensagem_boa = NodePath("../mensagem_boa")
+
+[node name="sprite_nota_amarela" type="Sprite2D" parent="nota_amarela" unique_id=969411188]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("3_0hol4")
+
+[node name="hitbox_nota_amarela" type="CollisionShape2D" parent="nota_amarela" unique_id=354240562]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="teclado_amarelo" type="Area2D" parent="." unique_id=1497237267]
+texture_filter = 3
+position = Vector2(481, 456)
+script = ExtResource("4_hqns4")
+
+[node name="sprite_teclado_amarelo" type="Sprite2D" parent="teclado_amarelo" unique_id=1480187889]
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="hitbox_teclado_amarelo" type="CollisionShape2D" parent="teclado_amarelo" unique_id=229175253]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="nota_vermelha" type="Area2D" parent="." unique_id=394695034]
+position = Vector2(281, 1)
+script = ExtResource("5_kdubu")
+
+[node name="sprite_nota_vermelha" type="Sprite2D" parent="nota_vermelha" unique_id=1911545464]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("6_d21ai")
+
+[node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="nota_vermelha" unique_id=585676287]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="teclado_vermelho" type="Area2D" parent="." unique_id=889638840]
+position = Vector2(281, 456)
+
+[node name="sprite_teclado_vermelho" type="Sprite2D" parent="teclado_vermelho" unique_id=168926482]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="teclado_vermelho" unique_id=1246906295]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="nota_verde" type="Area2D" parent="." unique_id=1305213150]
+position = Vector2(681, 1)
+script = ExtResource("7_d21ai")
+
+[node name="sprite_nota_verde" type="Sprite2D" parent="nota_verde" unique_id=366580483]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("8_ir8iy")
+
+[node name="hitbox_nota_verde" type="CollisionShape2D" parent="nota_verde" unique_id=1490263655]
+position = Vector2(2, 8.5)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="teclado_verde" type="Area2D" parent="." unique_id=840038609]
+position = Vector2(681, 456)
+
+[node name="sprite_teclado_verde" type="Sprite2D" parent="teclado_verde" unique_id=1783108050]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="hitbox_teclado_verde" type="CollisionShape2D" parent="teclado_verde" unique_id=11640943]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="nota_azul" type="Area2D" parent="." unique_id=2038738912]
+position = Vector2(881, 1)
+script = ExtResource("9_hqns4")
+
+[node name="sprite_nota_azul" type="Sprite2D" parent="nota_azul" unique_id=1464357065]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("10_x0ka3")
+
+[node name="hitbox_nota_azul" type="CollisionShape2D" parent="nota_azul" unique_id=2039568193]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_ta5nu")
+
+[node name="teclado_azul" type="Area2D" parent="." unique_id=436523121]
+position = Vector2(881, 456)
+
+[node name="sprite_teclado_azul" type="Sprite2D" parent="teclado_azul" unique_id=1266659572]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_0hol4")
+
+[node name="hitbox_teclado_azul" type="CollisionShape2D" parent="teclado_azul" unique_id=70512789]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="mensagem_boa" type="Area2D" parent="." unique_id=674733253 node_paths=PackedStringArray("nota_amarela")]
+position = Vector2(610, 217)
+script = ExtResource("12_0h7mo")
+nota_amarela = NodePath("../nota_amarela")
+
+[node name="Sprite2D" type="Sprite2D" parent="mensagem_boa" unique_id=396944197]
+texture_filter = 3
+position = Vector2(1.9999943, -23.500006)
+scale = Vector2(2.6874998, 1.8906248)
+texture = ExtResource("12_x0ka3")
+
+[node name="Timer" type="Timer" parent="mensagem_boa" unique_id=284956814]
+
+[connection signal="area_entered" from="teclado_amarelo" to="nota_amarela" method="_on_teclado_amarelo_area_entered"]
+[connection signal="area_exited" from="teclado_amarelo" to="nota_amarela" method="_on_teclado_amarelo_area_exited"]
+[connection signal="area_entered" from="teclado_vermelho" to="nota_vermelha" method="_on_teclado_vermelho_area_entered"]
+[connection signal="area_exited" from="teclado_vermelho" to="nota_vermelha" method="_on_teclado_vermelho_area_exited"]
+[connection signal="area_entered" from="teclado_verde" to="nota_verde" method="_on_teclado_verde_area_entered"]
+[connection signal="area_exited" from="teclado_verde" to="nota_verde" method="_on_teclado_verde_area_exited"]
+[connection signal="area_entered" from="teclado_azul" to="nota_azul" method="_on_teclado_azul_area_entered"]
+[connection signal="area_exited" from="teclado_azul" to="nota_azul" method="_on_teclado_azul_area_exited"]
