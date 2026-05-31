@@ -1,3 +1,53 @@
 [gd_scene format=3 uid="uid://cx5507r6h30p3"]
 
-[node name="Cutscene" type="Node2D" unique_id=434503897]
+[ext_resource type="Script" uid="uid://d8jf1n4seqy0" path="res://scripts/cutscene.gd" id="1_8dw4w"]
+[ext_resource type="Texture2D" uid="uid://bfpv20nbwxxtt" path="res://imagens/backgrounds/background-ritmo.png" id="1_xinj7"]
+[ext_resource type="Texture2D" uid="uid://c7cgdgooqvcin" path="res://imagens/personagens/rogerio/rogerio_normal1.png" id="2_8dw4w"]
+[ext_resource type="Texture2D" uid="uid://ucy8kak1dqcj" path="res://imagens/personagens/carlos/carlos-normal2.png" id="3_8ug67"]
+[ext_resource type="Texture2D" uid="uid://cjjxgrkpi4mi4" path="res://imagens/personagens/lorena/lorena-normal1.png" id="4_a8hyk"]
+
+[node name="Cutscene" type="TextureRect" unique_id=1923326075]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dw4w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1278827068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_xinj7")
+expand_mode = 3
+
+[node name="Rogerinho" type="TextureRect" parent="TextureRect" unique_id=90394483]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 663.0
+offset_right = 658.0
+offset_bottom = 783.0
+texture = ExtResource("2_8dw4w")
+flip_h = true
+
+[node name="Carlos" type="TextureRect" parent="TextureRect" unique_id=1639299425]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 676.0
+offset_right = 922.0
+offset_bottom = 796.0
+texture = ExtResource("3_8ug67")
+flip_h = true
+
+[node name="Lorena" type="TextureRect" parent="TextureRect" unique_id=1201885635]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 609.0
+offset_right = 1183.0
+offset_bottom = 729.0
+texture = ExtResource("4_a8hyk")
