@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		orientacao = "direita"
 		$Sprite2D.flip_h = false
-	if morreu:
+	if morreu or player1.morreu:
 		return
 	if vida <= 0:
 		print("morreu")
@@ -92,18 +92,30 @@ func _on_timer_timeout() -> void:
 	timerTimes.append(Time.get_ticks_usec())
 	timer.start()
 	await get_tree().create_timer(0.07).timeout
-	if input == player1.input and input == "fraco" or input =="forte":
+	if input == player1.input and input == "fraco":
 		return
-	if input == "cima":
+	elif input == player1.input and input == "forte":
+		return
+	elif input == "cima":
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
-	if input == "esquerda":
-		pos[0] -= 120
-	if input == "direita":
-		pos[0] += 120
-	if input == "fraco":
+	elif input == "esquerda" and self.position.x > 60:
+		if player1.position.x == self.position.x - 120 and player1.input != "esquerda":
+			pos[0] -= 240
+		elif player1.position.x == self.position.x - 240 and player1.input == "direita":
+			pos[0] -= 240
+		else:
+			pos[0] -= 120
+	elif input == "direita" and self.position.x < 1860:
+		if player1.position.x == self.position.x + 120 and player1.input != "direita":
+			pos[0] += 240
+		elif player1.position.x == self.position.x + 240 and player1.input == "esquerda":
+			pos[0] += 240
+		else:
+			pos[0] += 120
+	elif input == "fraco" and player1.input != "forte":
 		ataque_fraco(pos[0], pos[1])
-	if input == "forte":
+	elif input == "forte":
 		ataque_forte(pos[0], pos[1])
 	input = "nada"

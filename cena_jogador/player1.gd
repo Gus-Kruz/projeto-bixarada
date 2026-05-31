@@ -6,8 +6,8 @@ var pos = [540,540]
 var bpm = 0.5
 var vida = 100
 var orientacao = "direita"
-var timerTimes = [0]
-var inputTimes = [0]
+var timerTime
+var inputTime
 @export var player2 : Node2D
 @onready var timer = get_node("../Timer")
 @onready var sprite = get_node("../Sprite2D")
@@ -46,31 +46,31 @@ func _process(delta: float) -> void:
 	else:
 		orientacao = "direita"
 		$Sprite2D.flip_h = false
-	if morreu:
+	if morreu or player2.morreu:
 		return
 	if vida <= 0:
 		print("morreu")
 		morte1.emit()
 		morreu = true
 	if Input.is_action_just_pressed("cima1"):
-		inputTimes.append(Time.get_ticks_usec())
-		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+		inputTime = Time.get_ticks_usec()
+		if Ritmo.in_time(timerTime, inputTime):
 			input = "cima"
 	if Input.is_action_just_pressed("esquerda1"):
-		inputTimes.append(Time.get_ticks_usec())
-		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+		inputTime = Time.get_ticks_usec()
+		if Ritmo.in_time(timerTime, inputTime):
 			input = "esquerda"
 	if Input.is_action_just_pressed("direita1"):
-		inputTimes.append(Time.get_ticks_usec())
-		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+		inputTime = Time.get_ticks_usec()
+		if Ritmo.in_time(timerTime, inputTime):
 			input = "direita"
 	if Input.is_action_just_pressed("fraco1"):
-		inputTimes.append(Time.get_ticks_usec())
-		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+		inputTime = Time.get_ticks_usec()
+		if Ritmo.in_time(timerTime, inputTime):
 			input = "fraco"
 	if Input.is_action_just_pressed("forte1"):
-		inputTimes.append(Time.get_ticks_usec())
-		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+		inputTime = Time.get_ticks_usec()
+		if Ritmo.in_time(timerTime, inputTime):
 			input = "forte"
 	self.position = Vector2(pos[0], pos[1])
 
@@ -89,21 +89,34 @@ func _on_hurtbox_2d_1_area_entered(area: Area2D) -> void:
 		forte.emit()
 
 func _on_timer_timeout() -> void:
-	timerTimes.append(Time.get_ticks_usec())
+	timerTime = Time.get_ticks_usec()
 	timer.start()
 	await get_tree().create_timer(0.07).timeout
-	if input == player2.input and input == "fraco" or input =="forte":
+	if input == player2.input and input == "fraco":
 		return
-	if input == "cima":
+	elif input == player2.input and input == "forte":
+		return
+	elif input == "cima":
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
-	if input == "esquerda":
-		pos[0] -= 120
-	if input == "direita":
-		pos[0] += 120
-	if input == "fraco":
+	elif input == "esquerda" and self.position.x > 60:
+		if player2.position.x == self.position.x - 120 and player2.input != "esquerda":
+			pos[0] -= 240
+		elif player2.position.x == self.position.x - 240 and player2.input == "direita":
+			pos[0] -= 240
+		else:
+			pos[0] -= 120
+	elif input == "direita" and self.position.x < 1860:
+		if player2.position.x == self.position.x + 120 and player2.input != "direita":
+			pos[0] += 240
+		elif player2.position.x == self.position.x + 240 and player2.input == "esquerda":
+			pos[0] += 240
+		else:
+			pos[0] += 120
+	elif input == "fraco" and player2.input != "forte":
 		ataque_fraco(pos[0], pos[1])
-	if input == "forte":
+	elif input == "forte":
+		print("forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"
