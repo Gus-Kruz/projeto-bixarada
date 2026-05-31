@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bjso0bxy31hun"]
+
+[ext_resource type="Script" uid="uid://bq43ybpb4dl45" path="res://notas.gd" id="1_l1aip"]
+[ext_resource type="Script" uid="uid://dkj4lm4ap6f30" path="res://track.gd" id="1_t0gok"]
+[ext_resource type="Texture2D" uid="uid://nwpa1nekh1eq" path="res://imagens/nota_azul.png" id="2_t0gok"]
+[ext_resource type="Texture2D" uid="uid://2ktoywcu1nek" path="res://imagens/nota_verde.png" id="3_vhw2h"]
+[ext_resource type="Texture2D" uid="uid://dwd4f2n28wncs" path="res://imagens/nota_vermalha.png" id="4_07pqx"]
+[ext_resource type="Texture2D" uid="uid://704gtkuwlqnl" path="res://imagens/nota_amarela.png" id="5_dxuj3"]
+[ext_resource type="Script" uid="uid://dfc71ys53knhu" path="res://teclado_azul.gd" id="6_qugw3"]
+[ext_resource type="Texture2D" uid="uid://cee042oatk0ad" path="res://imagens/espaço_clicar_nota.png" id="7_k5kjr"]
+[ext_resource type="Script" uid="uid://c153cxfbplkqk" path="res://teclado_verde.gd" id="8_2vwrv"]
+[ext_resource type="Script" uid="uid://c037w31kic78k" path="res://teclado_vermelho.gd" id="9_5lb0j"]
+[ext_resource type="Script" uid="uid://bi1m1jcokrfa5" path="res://teclado_amarelo.gd" id="10_n3dk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(43, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(50, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(48, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(47.75, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(52, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(53, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(40, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
+size = Vector2(51, 59)
+
+[node name="track" type="Node2D" unique_id=1785089555]
+script = ExtResource("1_t0gok")
+
+[node name="notas" type="Node2D" parent="." unique_id=1958078621]
+script = ExtResource("1_l1aip")
+
+[node name="nota_azul" type="Area2D" parent="notas" unique_id=1715260974]
+position = Vector2(733, 1)
+
+[node name="sprite_nota_azul" type="Sprite2D" parent="notas/nota_azul" unique_id=1451828806]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("2_t0gok")
+
+[node name="hitbox_nota_azul" type="CollisionShape2D" parent="notas/nota_azul" unique_id=1417136723]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_ta5nu")
+
+[node name="nota_verde" type="Area2D" parent="notas" unique_id=630027487]
+position = Vector2(583, 1)
+
+[node name="sprite_nota_verde" type="Sprite2D" parent="notas/nota_verde" unique_id=447494627]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("3_vhw2h")
+
+[node name="hitbox_nota_verde" type="CollisionShape2D" parent="notas/nota_verde" unique_id=1549362657]
+position = Vector2(2, 8.5)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="nota_vermelha" type="Area2D" parent="notas" unique_id=1135327054]
+position = Vector2(283, 1)
+
+[node name="sprite_nota_vermelha" type="Sprite2D" parent="notas/nota_vermelha" unique_id=686076255]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("4_07pqx")
+
+[node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="notas/nota_vermelha" unique_id=1207075817]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="nota_amarela" type="Area2D" parent="notas" unique_id=1038843578]
+position = Vector2(433, 1)
+
+[node name="sprite_nota_amarela" type="Sprite2D" parent="notas/nota_amarela" unique_id=928279092]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("5_dxuj3")
+
+[node name="hitbox_nota_amarela" type="CollisionShape2D" parent="notas/nota_amarela" unique_id=996676414]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="teclados" type="Node2D" parent="." unique_id=1627598628]
+
+[node name="teclado_azul" type="Area2D" parent="teclados" unique_id=351780807]
+position = Vector2(733, 737)
+script = ExtResource("6_qugw3")
+
+[node name="sprite_teclado_azul" type="Sprite2D" parent="teclados/teclado_azul" unique_id=1677722615]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("7_k5kjr")
+
+[node name="hitbox_teclado_azul" type="CollisionShape2D" parent="teclados/teclado_azul" unique_id=1427160499]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="teclado_verde" type="Area2D" parent="teclados" unique_id=1293133280]
+position = Vector2(583, 737)
+script = ExtResource("8_2vwrv")
+
+[node name="sprite_teclado_verde" type="Sprite2D" parent="teclados/teclado_verde" unique_id=756124825]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("7_k5kjr")
+
+[node name="hitbox_teclado_verde" type="CollisionShape2D" parent="teclados/teclado_verde" unique_id=1456905018]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="teclado_vermelho" type="Area2D" parent="teclados" unique_id=611139124]
+position = Vector2(283, 737)
+script = ExtResource("9_5lb0j")
+
+[node name="sprite_teclado_vermelho" type="Sprite2D" parent="teclados/teclado_vermelho" unique_id=1076777530]
+texture_filter = 3
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("7_k5kjr")
+
+[node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="teclados/teclado_vermelho" unique_id=792902881]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="teclado_amarelo" type="Area2D" parent="teclados" unique_id=18662535]
+texture_filter = 3
+position = Vector2(433, 737)
+script = ExtResource("10_n3dk4")
+
+[node name="sprite_teclado_amarelo" type="Sprite2D" parent="teclados/teclado_amarelo" unique_id=1843852604]
+scale = Vector2(3.219, 3.219)
+texture = ExtResource("7_k5kjr")
+
+[node name="hitbox_teclado_amarelo" type="CollisionShape2D" parent="teclados/teclado_amarelo" unique_id=216097668]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[connection signal="area_entered" from="notas/nota_azul" to="teclados/teclado_azul" method="_on_nota_azul_area_entered"]
+[connection signal="area_exited" from="notas/nota_azul" to="teclados/teclado_azul" method="_on_nota_azul_area_exited"]
+[connection signal="area_entered" from="notas/nota_verde" to="teclados/teclado_verde" method="_on_nota_verde_area_entered"]
+[connection signal="area_exited" from="notas/nota_verde" to="teclados/teclado_verde" method="_on_nota_verde_area_exited"]
+[connection signal="area_entered" from="notas/nota_vermelha" to="teclados/teclado_vermelho" method="_on_nota_vermelha_area_entered"]
+[connection signal="area_exited" from="notas/nota_vermelha" to="teclados/teclado_vermelho" method="_on_nota_vermelha_area_exited"]
+[connection signal="area_entered" from="notas/nota_amarela" to="teclados/teclado_amarelo" method="_on_nota_amarela_area_entered"]
+[connection signal="area_exited" from="notas/nota_amarela" to="teclados/teclado_amarelo" method="_on_nota_amarela_area_exited"]
