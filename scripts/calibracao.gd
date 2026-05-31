@@ -9,11 +9,19 @@ var timer;
 var audio;
 var sprite;
 var text;
+var TRANSICAO = preload('res://menu/transicao.tscn')
+
 func _ready() -> void:
 	timer = $Timer;
 	audio = $AudioStreamPlayer;
 	sprite = $Sprite2D;
 	text = $TextEdit;
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node('fade')
+	fade.play_backwards('fade')
+	await fade.animation_finished
+	get_node("transicao").queue_free()
 	
 func update() -> void:
 	# Time configs
