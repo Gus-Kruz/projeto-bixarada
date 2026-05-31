@@ -19,6 +19,7 @@ config/icon="res://cena_jogador/icon.svg"
 
 Ritmo="*uid://f4vtqe5ehbar"
 DialogueManager="*uid://d0jf3qp0sq2l2"
+Config="*uid://clna3opl5k6pb"
 PersonagemDado="*uid://cwa8os2ci6p4u"
 
 [display]
