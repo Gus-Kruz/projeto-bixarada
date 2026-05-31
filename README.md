@@ -26,3 +26,6 @@ A segunda (e verdadeira) parte do jogo envolve uma luta entre os personagens. El
 
 - Os personagens inicias e seus instrumentos do jogo serão os representados na capa;
 - O tema "Não julgue o livro pela capa" é cumprido quando há a quebra de expectativa na mudança na mecânica de jogo.
+
+# Como contribuir:
+[Diretizes de Contribuição](https://github.com/Gus-Kruz/projeto-bixarada/blob/master/Diretrizes%20de%20Contribui%C3%A7%C3%A3o.md)
