@@ -50,3 +50,7 @@ func _ready() -> void:
 	
 	DialogueManager.start_dialogue(dialogo)
 	
+
+
+func _on_focus_exited() -> void:
+	get_tree().change_scene_to_file("res://cena_jogador/nota2.tscn")

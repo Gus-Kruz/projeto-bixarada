@@ -4,14 +4,18 @@ extends CanvasLayer
 @onready var name_text: Label = $DialogueBox/NameText
 @onready var dialogue_text: Label = $DialogueBox/DialogueText
 
+signal acabou
+
 var dialogue_lines = [[]]
 var current_line_index: int = 0
 var dialogue_active: bool = false
 
 func _ready() -> void:
 	dialogue_box.visible = false
+	
 
 func start_dialogue(lines):
+
 	get_tree().paused = true
 	
 	dialogue_lines = lines
@@ -36,4 +40,4 @@ func advence_dialogue():
 		get_tree().pause = false
 		dialogue_active = false
 		dialogue_box.visible = false
-		
+		acabou.emit()

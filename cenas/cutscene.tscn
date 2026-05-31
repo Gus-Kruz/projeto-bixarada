@@ -61,3 +61,5 @@ offset_right = 1131.0
 offset_bottom = 589.0
 scale = Vector2(2, 2)
 texture = ExtResource("4_a8hyk")
+
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

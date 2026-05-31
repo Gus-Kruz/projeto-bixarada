@@ -22,6 +22,8 @@ DialogueManager="*uid://d0jf3qp0sq2l2"
 PersonagemDado="*uid://cwa8os2ci6p4u"
 Config="*uid://clna3opl5k6pb"
 
+PersonagemDado="*uid://o2cgg8ihfwcr"
+
 [display]
 
 window/size/viewport_width=1920
