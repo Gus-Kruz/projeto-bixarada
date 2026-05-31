@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://d0jf3qp0sq2l2"]
+
+[ext_resource type="Script" uid="uid://dbnmi0yygr54c" path="res://scripts/dialogue_manager.gd" id="1_lmvtu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_umqby"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmvtu"]
+font_size = 30
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=146577800]
+process_mode = 3
+script = ExtResource("1_lmvtu")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=1049862622]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox" unique_id=1634368515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="NameText" type="Label" parent="DialogueBox" unique_id=1759565409]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Nomeeeee"
+label_settings = SubResource("LabelSettings_umqby")
+autowrap_mode = 3
+
+[node name="DialogueText" type="Label" parent="DialogueBox" unique_id=1415904826]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Bla bla bla bla bla"
+label_settings = SubResource("LabelSettings_lmvtu")
+autowrap_mode = 3
