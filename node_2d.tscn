@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c8tty3o0yql8e"]
+[gd_scene format=3 uid="uid://08qcvrg4821l"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_nr8wp"]
+[ext_resource type="Script" uid="uid://bduf5snfdp0dq" path="res://node_2d.gd" id="1_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://vlcu8rbkmq8j" path="res://imagens/patinha-pixilart.png" id="3_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://bfpv20nbwxxtt" path="res://imagens/backgrounds/background-ritmo.png" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bjso0bxy31hun" path="res://track.tscn" id="4_4d7sh"]
