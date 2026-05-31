@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cee042oatk0ad"
-path="res://.godot/imported/espaço_clicar_nota.png-45e6ddd45ddd9f9f93778b2de206e527.ctex"
+uid="uid://ch0lt33uyobay"
+path="res://.godot/imported/carlos-escolhido.png-241bc74e37d9d67a1764c48b6e88a892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/espaço_clicar_nota.png"
-dest_files=["res://.godot/imported/espaço_clicar_nota.png-45e6ddd45ddd9f9f93778b2de206e527.ctex"]
+source_file="res://imagens/personagens/carlos/carlos-escolhido.png"
+dest_files=["res://.godot/imported/carlos-escolhido.png-241bc74e37d9d67a1764c48b6e88a892.ctex"]
 
 [params]
 
