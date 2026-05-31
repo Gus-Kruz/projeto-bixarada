@@ -2,78 +2,81 @@
 
 [ext_resource type="Script" uid="uid://bp77exajhas1v" path="res://menu/menu_principal.gd" id="1_5peh6"]
 [ext_resource type="Texture2D" uid="uid://bxbsfh5boret7" path="res://imagens/Logo placeholder.png" id="1_kaf03"]
+[ext_resource type="Texture2D" uid="uid://dikvpq61pmlhv" path="res://imagens/backgrounds/Menu-principal.png" id="2_35p1k"]
 [ext_resource type="Texture2D" uid="uid://di8ndjty544dk" path="res://imagens/jogar placeholder.png" id="2_kaf03"]
 [ext_resource type="Texture2D" uid="uid://bpq4u2iy5h40d" path="res://imagens/Configurar placeholder.png" id="3_35p1k"]
 [ext_resource type="Texture2D" uid="uid://yceftpskd2sv" path="res://imagens/Creditos placeholder.png" id="4_5u2e6"]
 [ext_resource type="Texture2D" uid="uid://cc6a3cnx8kmh4" path="res://imagens/sair placeholder.png" id="5_5peh6"]
 [ext_resource type="Texture2D" uid="uid://bnyg5crf47few" path="res://imagens/Versão placeholder.png" id="5_t1ba6"]
-[ext_resource type="Texture2D" uid="uid://c0s6s2d1naje7" path="res://imagens/New Piskel-1.png.png" id="8_35p1k"]
 
-[node name="MarginContainer" type="MarginContainer" unique_id=1585832246]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+[node name="Paidetodos" type="Node2D" unique_id=851897262]
 script = ExtResource("1_5peh6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=561242855]
 z_index = -1
 texture_filter = 3
-layout_mode = 2
-texture = ExtResource("8_35p1k")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_35p1k")
+expand_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=166079408]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=768132586]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1869855456]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=166079408]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1869855456]
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1211146227]
+[node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1211146227]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.13
 texture = ExtResource("1_kaf03")
 
-[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1192275697]
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1192275697]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
+alignment = 2
 
-[node name="Jogar" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1989734103]
+[node name="Jogar" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=1989734103]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_kaf03")
 stretch_mode = 3
 
-[node name="Configurações" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=407052297]
+[node name="Configurações" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=407052297]
 layout_mode = 2
 texture_normal = ExtResource("3_35p1k")
 
-[node name="Créditos" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1170620072]
+[node name="Créditos" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=1170620072]
 layout_mode = 2
 texture_normal = ExtResource("4_5u2e6")
 
-[node name="Sair" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1702937943]
+[node name="Sair" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=1702937943]
 layout_mode = 2
 action_mode = 0
 texture_normal = ExtResource("5_5peh6")
 stretch_mode = 3
 
-[node name="Versão" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1223995907]
+[node name="Versão" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1223995907]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 texture = ExtResource("5_t1ba6")
 stretch_mode = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=613604493]
-layout_mode = 2
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Configurações" to="." method="_on_configurações_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Créditos" to="." method="_on_créditos_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/MenuOptions/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions/Sair" to="." method="_on_sair_pressed"]

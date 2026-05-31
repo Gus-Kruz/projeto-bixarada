@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://da8xtqq8uvdcv"]
+
+[ext_resource type="Script" uid="uid://clna3opl5k6pb" path="res://menu/config.gd" id="1_1bbqe"]
+[ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="1_nmity"]
+[ext_resource type="Texture2D" uid="uid://dj0s7ffdjs1p0" path="res://imagens/voltar placeholder.png" id="2_hxsha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmity"]
+font = ExtResource("1_nmity")
+font_size = 67
+
+[sub_resource type="LabelSettings" id="LabelSettings_hxsha"]
+font = ExtResource("1_nmity")
+font_size = 67
+
+[node name="Config" type="Panel" unique_id=264658713]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bbqe")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1526654533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 560
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 480
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=350593430]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=931252454]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=896452149]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 57
+text = "Volume:"
+label_settings = SubResource("LabelSettings_nmity")
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1592739697]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2004462825]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Fullscreen:"
+label_settings = SubResource("LabelSettings_hxsha")
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=943747157]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_icon = true
+
+[node name="calibrar" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1323606381]
+layout_mode = 2
+
+[node name="voltar" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1140641615]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture_normal = ExtResource("2_hxsha")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=932521047]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
