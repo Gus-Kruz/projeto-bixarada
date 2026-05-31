@@ -1,20 +1,18 @@
-extends Area2D
-@export var nota_amarela:Area2D
+extends Node2D
+var babys
 
-@onready var timer: Timer = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.visible = false
+	babys = $".".get_children()
+	for nota in babys:
+		nota.visible = false
+	for nota in babys:
+		var x = randf_range(1.2,2.2)
+		await get_tree().create_timer(x).timeout
+		nota.visible = true
 	pass # Replace with function body.
 
-func _on_timeout():
-	pass
 
-func on_yipe():
-	self.visible = true
-	await get_tree().create_timer(0.4).timeout
-	self.visible = false
-	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
