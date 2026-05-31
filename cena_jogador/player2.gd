@@ -4,10 +4,11 @@ var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
 var pos = [1500,540]
 var vida = 100
-var bpm = 0.42857
+var bpm = 0.5
 var orientacao = "direita"
 var timerTimes = [0]
 var inputTimes = [0]
+@onready var player2 = PersonagemDado.player2
 @export var player1 : Node2D
 @onready var timer = get_node("../Timer")
 @onready var sprite = get_node("../Sprite2D")
@@ -97,12 +98,12 @@ func _on_timer_timeout() -> void:
 	elif input == player1.input and input == "forte":
 		return
 	elif input == "cima":
-		$AnimatedSprite2D.play("lorena_normal")
+		$AnimatedSprite2D.play(player2+"_normal")
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	elif input == "esquerda" and self.position.x > 60:
-		$AnimatedSprite2D.play("lorena_normal")
+		$AnimatedSprite2D.play(player2+"_normal")
 		if player1.position.x == self.position.x - 120 and player1.input != "esquerda":
 			pos[0] -= 240
 		elif player1.position.x == self.position.x - 240 and player1.input == "direita":
@@ -110,7 +111,7 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] -= 120
 	elif input == "direita" and self.position.x < 1860:
-		$AnimatedSprite2D.play("lorena_normal")
+		$AnimatedSprite2D.play(player2+"_normal")
 		if player1.position.x == self.position.x + 120 and player1.input != "direita":
 			pos[0] += 240
 		elif player1.position.x == self.position.x + 240 and player1.input == "esquerda":
@@ -118,9 +119,9 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] += 120
 	elif input == "fraco" and player1.input != "forte":
-		$AnimatedSprite2D.play("lorena_fraco")
+		$AnimatedSprite2D.play(player2+"_fraco")
 		ataque_fraco(pos[0], pos[1])
 	elif input == "forte":
-		$AnimatedSprite2D.play("lorena_forte")
+		$AnimatedSprite2D.play(player2+"_forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"

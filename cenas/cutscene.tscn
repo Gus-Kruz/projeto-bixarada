@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cx5507r6h30p3"]
+[gd_scene format=3 uid="uid://b8gbl7noofjx1"]
 
 [ext_resource type="Script" uid="uid://d8jf1n4seqy0" path="res://scripts/cutscene.gd" id="1_8dw4w"]
 [ext_resource type="Texture2D" uid="uid://c7cgdgooqvcin" path="res://imagens/personagens/rogerio/rogerio_normal1.png" id="2_8dw4w"]

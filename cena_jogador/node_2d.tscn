@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cy4i7quv0jgts" path="res://cena_jogador/canvas_layer.gd" id="8_iqe8l"]
 [ext_resource type="Script" path="res://cena_jogador/texture_progress_bar_2.gd" id="9_b3ru7"]
 [ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="11_1w71b"]
-[ext_resource type="AudioStream" uid="uid://dgjxcm838m1v5" path="res://recursos/Bossa_Nova_CoverJam.mp3" id="13_iqe8l"]
+[ext_resource type="AudioStream" uid="uid://k0bow4mmoese" path="res://recursos/Rock_CoverJam_PLACEHOLDER.mp3" id="13_iqe8l"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0tn1g"]
 

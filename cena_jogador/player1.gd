@@ -1,10 +1,10 @@
 extends Node2D
-#@onready var player1 = PersonagemDado.player1
+@onready var player1 = PersonagemDado.player1
 
 var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
 var pos = [540,540]
-var bpm = 0.42857
+var bpm = 0.5
 var vida = 100
 var orientacao = "direita"
 var timerTime
@@ -22,7 +22,7 @@ func _ready() -> void:
 	tempo = 1
 	timer.start()
 	musica.play()
-	#print(player1)
+	print(player1)
 	
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
@@ -106,12 +106,12 @@ func _on_timer_timeout() -> void:
 	elif input == player2.input and input == "forte":
 		return
 	elif input == "cima":
-		$AnimatedSprite2D.play("carlos_normal")
+		$AnimatedSprite2D.play(player1+"_normal")
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	elif input == "esquerda" and self.position.x > 60:
-		$AnimatedSprite2D.play("carlos_normal")
+		$AnimatedSprite2D.play(player1+"_normal")
 		if player2.position.x == self.position.x - 120 and player2.input != "esquerda":
 			pos[0] -= 240
 		elif player2.position.x == self.position.x - 240 and player2.input == "direita":
@@ -119,7 +119,7 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] -= 120
 	elif input == "direita" and self.position.x < 1860:
-		$AnimatedSprite2D.play("carlos_normal")
+		$AnimatedSprite2D.play(player1+"_normal")
 		if player2.position.x == self.position.x + 120 and player2.input != "direita":
 			pos[0] += 240
 		elif player2.position.x == self.position.x + 240 and player2.input == "esquerda":
@@ -127,10 +127,10 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] += 120
 	elif input == "fraco" and player2.input != "forte":
-		$AnimatedSprite2D.play("carlos_fraco")
+		$AnimatedSprite2D.play(player1+"_fraco")
 		ataque_fraco(pos[0], pos[1])
 	elif input == "forte":
-		$AnimatedSprite2D.play("carlos_forte")
+		$AnimatedSprite2D.play(player1+"_forte")
 		print("forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"

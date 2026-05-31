@@ -47,6 +47,6 @@ func _ready() -> void:
 		['Carlos','Para onde você fica olhando?... Procurando ajuda dos seus amigos?…'],
 		['Lorena','Hehehe, você nem sabe quanto! Espero que VOCÊ trate de ganhar para mim.']
 		]
-
+	
 	DialogueManager.start_dialogue(dialogo)
 	
