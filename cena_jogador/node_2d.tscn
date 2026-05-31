@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
 [ext_resource type="PackedScene" uid="uid://cuvmupkmb8er0" path="res://cena_jogador/player2.tscn" id="2_0tn1g"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0tn1g"]
+
 [node name="Node2D" type="Node2D" unique_id=1532618862]
 
 [node name="Player1" parent="." unique_id=966840436 node_paths=PackedStringArray("player2") instance=ExtResource("1_0e48y")]
@@ -10,3 +12,16 @@ player2 = NodePath("../Player2")
 
 [node name="Player2" parent="." unique_id=1246125307 node_paths=PackedStringArray("player1") instance=ExtResource("2_0tn1g")]
 player1 = NodePath("../Player1")
+
+[node name="Timer" type="Timer" parent="." unique_id=166415698]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=680711503]
+visible = false
+position = Vector2(792, 237)
+scale = Vector2(158.5, 158.5)
+texture = SubResource("PlaceholderTexture2D_0tn1g")
+
+[connection signal="timeout" from="Timer" to="Player1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Player2" method="_on_timer_timeout"]

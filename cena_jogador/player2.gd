@@ -4,12 +4,17 @@ var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
 var pos = [1500,540]
 var vida = 100
-var bpm = 1
+var bpm = 0.5
 var orientacao = "direita"
+var timerTimes = [0]
+var inputTimes = [0]
 @export var player1 : Node2D
+@onready var timer = get_node("../Timer")
+@onready var sprite = get_node("../Sprite2D")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.position = Vector2(pos[0], pos[1])
+	timer.start()
 	
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
@@ -31,6 +36,7 @@ func ataque_forte(player_x, player_y):
 	await get_tree().create_timer(bpm).timeout
 	forte.queue_free()
 var morreu = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if self.position.x > player1.position.x:
@@ -45,17 +51,27 @@ func _physics_process(delta: float) -> void:
 		print("morreu")
 		morreu = true 
 	if Input.is_action_just_pressed("cima2"):
-		pos[1] -= 120
-		await get_tree().create_timer(bpm).timeout
-		pos[1] += 120
+		inputTimes.append(Time.get_ticks_usec())
+		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+			pos[1] -= 120
+			await get_tree().create_timer(bpm).timeout
+			pos[1] += 120
 	if Input.is_action_just_pressed("esquerda2"):
-		pos[0] -= 120
+		inputTimes.append(Time.get_ticks_usec())
+		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+			pos[0] -= 120
 	if Input.is_action_just_pressed("direita2"):
-		pos[0] += 120
+		inputTimes.append(Time.get_ticks_usec())
+		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+			pos[0] += 120
 	if Input.is_action_just_pressed("fraco2"):
-		ataque_fraco(pos[0], pos[1])
+		inputTimes.append(Time.get_ticks_usec())
+		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+			ataque_fraco(pos[0], pos[1])
 	if Input.is_action_just_pressed("forte2"):
-		ataque_forte(pos[0], pos[1])
+		inputTimes.append(Time.get_ticks_usec())
+		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
+			ataque_forte(pos[0], pos[1])
 	self.position = Vector2(pos[0], pos[1])
 
 
@@ -68,3 +84,7 @@ func _on_hurtbox_2d_2_area_entered(area: Area2D) -> void:
 		print("forte")
 		vida -= 20
 		print("player 2 " + str(vida))
+		
+func _on_timer_timeout() -> void:
+	timerTimes.append(Time.get_ticks_usec())
+	timer.start()
