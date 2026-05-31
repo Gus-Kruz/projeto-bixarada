@@ -3,18 +3,31 @@ extends Node2D
 var threshold = 670
 var is_six: bool = true
 var easter = 0
+var TRANSICAO = preload('res://menu/transicao.tscn')
 
+func transicao(caminho: String):
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node("fade")
+	fade.play('fade')
+	await fade.animation_finished
+	get_tree().change_scene_to_file(caminho)
+	
 func _on_jogar_pressed() -> void:
-	pass
-	# get_tree().change_scene_to_file("res://caminho_para_tela_selecao")
+	transicao('res://menu/selecao.tscn')
 
 func _on_configurações_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu/Config.tscn")
+	transicao('res://menu/Config.tscn')
 
 func _on_créditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu/creditos.tscn")
+	transicao('res://menu/creditos.tscn')
 
 func _on_sair_pressed() -> void:
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node("fade")
+	fade.play('fade')
+	await fade.animation_finished
 	get_tree().quit()
 
 func _process(delta: float) -> void:
