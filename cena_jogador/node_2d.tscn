@@ -5,6 +5,8 @@
 
 [node name="Node2D" type="Node2D" unique_id=1532618862]
 
-[node name="Player1" parent="." unique_id=966840436 instance=ExtResource("1_0e48y")]
+[node name="Player1" parent="." unique_id=966840436 node_paths=PackedStringArray("player2") instance=ExtResource("1_0e48y")]
+player2 = NodePath("../Player2")
 
-[node name="Player2" parent="." unique_id=1246125307 instance=ExtResource("2_0tn1g")]
+[node name="Player2" parent="." unique_id=1246125307 node_paths=PackedStringArray("player1") instance=ExtResource("2_0tn1g")]
+player1 = NodePath("../Player1")
