@@ -46,6 +46,18 @@ texture_normal = ExtResource("7_rpk3s")
 texture_pressed = ExtResource("8_d4vk5")
 texture_hover = ExtResource("8_d4vk5")
 
+[node name="rogerio-nome" type="Label" parent="selecao-margin/players/personagens/rogerio" unique_id=186014391]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 448.0
+offset_right = 331.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 40
+text = "Rogerio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -54,6 +66,18 @@ texture_normal = ExtResource("3_rpk3s")
 texture_pressed = ExtResource("4_d4vk5")
 texture_hover = ExtResource("4_d4vk5")
 
+[node name="carlos-nome" type="Label" parent="selecao-margin/players/personagens/carlos" unique_id=380268447]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 448.0
+offset_right = 334.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 40
+text = "Carlos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -61,6 +85,18 @@ size_flags_vertical = 4
 texture_normal = ExtResource("5_uh61i")
 texture_pressed = ExtResource("6_rfrvn")
 texture_hover = ExtResource("6_rfrvn")
+
+[node name="lorena-nome" type="Label" parent="selecao-margin/players/personagens/lorena" unique_id=297580873]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 448.0
+offset_right = 333.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 40
+text = "Lorena"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="player" type="HBoxContainer" parent="selecao-margin/players" unique_id=1233503707]
 layout_mode = 2
