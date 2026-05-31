@@ -22,6 +22,8 @@ func update() -> void:
 	var stdDev = (diffTimes.reduce(func(accum, num): return accum+(num-mean)**2))/len(diffTimes);
 	stdDev = sqrt(stdDev);
 	Ritmo.stdDev = stdDev;
+
+	
 	
 	text.set_line(0, 'Offset: {0}ms\nStdDev: {1}ms'.format([snapped(mean/1000, 0.01), snapped(stdDev/1000, 0.01)]));
 
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 		
 		update();
 		i+=1;
+		
 
 func show_block() -> void:
 	sprite.visible = true;

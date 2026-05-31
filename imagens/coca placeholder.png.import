@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwu4da02nghof"
-path="res://.godot/imported/Background-liso.png-bac4cc6e7f082fdf56534a277167e3ec.ctex"
+uid="uid://bfa5y0jk75jwv"
+path="res://.godot/imported/coca placeholder.png-eefa93677581b035b2b3df626ef25a7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/backgrounds/Background-liso.png"
-dest_files=["res://.godot/imported/Background-liso.png-bac4cc6e7f082fdf56534a277167e3ec.ctex"]
+source_file="res://imagens/coca placeholder.png"
+dest_files=["res://.godot/imported/coca placeholder.png-eefa93677581b035b2b3df626ef25a7d.ctex"]
 
 [params]
 

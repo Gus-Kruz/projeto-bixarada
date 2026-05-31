@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwu4da02nghof"
-path="res://.godot/imported/Background-liso.png-bac4cc6e7f082fdf56534a277167e3ec.ctex"
+uid="uid://day8gpnm02u1u"
+path="res://.godot/imported/healthbarUnder.png-0a31ce78422e7a22e2a85bcb306f39ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/backgrounds/Background-liso.png"
-dest_files=["res://.godot/imported/Background-liso.png-bac4cc6e7f082fdf56534a277167e3ec.ctex"]
+source_file="res://imagens/healthbarUnder.png"
+dest_files=["res://.godot/imported/healthbarUnder.png-0a31ce78422e7a22e2a85bcb306f39ac.ctex"]
 
 [params]
 
