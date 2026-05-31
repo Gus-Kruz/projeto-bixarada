@@ -42,25 +42,25 @@ size_flags_stretch_ratio = 2.68
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-texture_normal = ExtResource("7_rpk3s")
-texture_pressed = ExtResource("8_d4vk5")
-texture_hover = ExtResource("8_d4vk5")
-
-[node name="carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
 texture_normal = ExtResource("3_rpk3s")
 texture_pressed = ExtResource("4_d4vk5")
 texture_hover = ExtResource("4_d4vk5")
 
-[node name="lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
+[node name="carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 texture_normal = ExtResource("5_uh61i")
 texture_pressed = ExtResource("6_rfrvn")
 texture_hover = ExtResource("6_rfrvn")
+
+[node name="lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("7_rpk3s")
+texture_pressed = ExtResource("8_d4vk5")
+texture_hover = ExtResource("8_d4vk5")
 
 [node name="player" type="HBoxContainer" parent="selecao-margin/players" unique_id=1233503707]
 layout_mode = 2
@@ -82,7 +82,7 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_v6eyu")
 theme_override_font_sizes/font_size = 120
-text = ">>"
+text = ">> ROGERIO"
 
 [node name="texto" type="Label" parent="selecao-margin/players/player" unique_id=313308512]
 layout_mode = 2
@@ -99,7 +99,7 @@ size_flags_horizontal = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_v6eyu")
 theme_override_font_sizes/font_size = 65
-text = "PLAYER 02"
+text = "PLAYQER 02"
 horizontal_alignment = 2
 
 [node name="nome2" type="Label" parent="selecao-margin/players/player/player2" unique_id=398789241]
@@ -108,13 +108,10 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_v6eyu")
 theme_override_font_sizes/font_size = 120
-text = "<<"
+text = "ROGERIO <<"
 horizontal_alignment = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1218643480]
 wait_time = 0.5
 
-[connection signal="pressed" from="selecao-margin/players/personagens/rogerio" to="." method="_on_rogerio_pressed"]
-[connection signal="pressed" from="selecao-margin/players/personagens/carlos" to="." method="_on_carlos_pressed"]
-[connection signal="pressed" from="selecao-margin/players/personagens/lorena" to="." method="_on_lorena_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
