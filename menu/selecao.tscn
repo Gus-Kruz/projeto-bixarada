@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lcmnq7wb42ch"]
 
 [ext_resource type="Texture2D" uid="uid://cwu4da02nghof" path="res://imagens/backgrounds/Background-liso.png" id="1_rfrvn"]
-[ext_resource type="Script" path="res://menu/selecao.gd" id="1_rpk3s"]
+[ext_resource type="Script" uid="uid://b0bsg2ixfp8pq" path="res://menu/selecao.gd" id="1_rpk3s"]
 [ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="1_v6eyu"]
 [ext_resource type="Texture2D" uid="uid://c740346dy7ymi" path="res://imagens/personagens/carlos/carlos-selecao.png" id="3_rpk3s"]
 [ext_resource type="Texture2D" uid="uid://ch0lt33uyobay" path="res://imagens/personagens/carlos/carlos-escolhido.png" id="4_d4vk5"]

@@ -15,6 +15,14 @@
 ['Carlos','Para onde você fica olhando?... Procurando ajuda dos seus amigos?…']
 ['Lorena','Hehehe, você nem sabe quanto! Espero que VOCÊ trate de ganhar para mim.']
 
+<<<<<<< HEAD
+[“Lorena”,“Você não está velho demais para continuar com maracas? Quando vai conseguir um instrumento de verdade?”
+["Rogerinho",“Hum! E você não está velha demais para conversar com o nada? Quando vai parar de falar com as paredes?”]
+=======
 ['Lorena','Você não está velho demais para continuar com maracas? Quando vai conseguir um instrumento de verdade?']
 ['Rogerinho','Hum! E você não está velha demais para conversar com o nada? Quando vai parar de falar com as paredes?']
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
+>>>>>>> ritmo
