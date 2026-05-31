@@ -8,63 +8,75 @@
 [ext_resource type="Texture2D" uid="uid://lgrbpq8nujed" path="res://imagens/eduardo placeholder.png" id="5_hymb8"]
 [ext_resource type="Texture2D" uid="uid://c3jrlfowf5w5h" path="res://imagens/yujiuau placeholder.png" id="6_j70ib"]
 [ext_resource type="Texture2D" uid="uid://dj0s7ffdjs1p0" path="res://imagens/voltar placeholder.png" id="7_3wuis"]
+[ext_resource type="Texture2D" uid="uid://ctfoqwwyd2d2t" path="res://imagens/lelo placeholder.png" id="8_hymb8"]
+[ext_resource type="Texture2D" uid="uid://dgihe1yx80nud" path="res://imagens/poeta placeholder.png" id="9_j70ib"]
+[ext_resource type="Texture2D" uid="uid://blw3ol6ygc5t5" path="res://imagens/dondon.png" id="10_3wuis"]
 
-[node name="MarginContainer" type="MarginContainer" unique_id=1618038397]
-anchors_preset = 8
+[node name="Paidevários" type="MarginContainer" unique_id=145930819]
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -312.0
-offset_top = -316.0
-offset_right = 312.0
-offset_bottom = 316.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_right = 192.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b7v7n")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=853322026]
+layout_mode = 2
 theme_override_constants/margin_left = 120
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 80
-script = ExtResource("1_b7v7n")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1152078148]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2102021608]
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=705316437]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-
-[node name="TextureRect3" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=1440247286]
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("3_85u1v")
-
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=1607096812]
-layout_mode = 2
-texture = ExtResource("2_b7v7n")
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=1588253159]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=306940740]
 layout_mode = 2
 texture = ExtResource("1_bthew")
 
-[node name="TextureRect4" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=890569958]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=595792200]
+layout_mode = 2
+texture = ExtResource("2_b7v7n")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=56383191]
+layout_mode = 2
+texture = ExtResource("3_85u1v")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=2508838]
 layout_mode = 2
 texture = ExtResource("4_vtmri")
 
-[node name="TextureRect5" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=446236615]
-layout_mode = 2
-texture = ExtResource("5_hymb8")
-
-[node name="TextureRect6" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=1369704296]
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=69292108]
 layout_mode = 2
 texture = ExtResource("6_j70ib")
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=274751165]
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1628879365]
+layout_mode = 2
+texture = ExtResource("5_hymb8")
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1534258545]
+layout_mode = 2
+texture = ExtResource("8_hymb8")
+
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1030767073]
+layout_mode = 2
+texture = ExtResource("9_j70ib")
+
+[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=169248576]
+layout_mode = 2
+texture = ExtResource("10_3wuis")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=175734089]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer2" unique_id=1459442018]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 8
 texture_normal = ExtResource("7_3wuis")
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/TextureButton" to="." method="_on_texture_button_pressed"]
