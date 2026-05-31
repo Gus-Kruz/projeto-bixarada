@@ -21,8 +21,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player1 != '' and player2 != '':
-		get_tree().change_scene_to_file("res://cenas/cutscene.tscn")
-		#PRECISA MUDAR ESSA PARTE!!!!
+
+		#var ritmo = preload("res://node_2d.tscn").instantiate()
+		get_tree().change_scene_to_file("res://node_2d.tscn")
+	pass
 	
 func muda_cor(estado,path):
 	estado = !estado
