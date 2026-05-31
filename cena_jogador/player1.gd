@@ -18,6 +18,7 @@ var personagem
 @onready var sprite = get_node("../Sprite2D")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.play(player1+"_normal")
 	self.position = Vector2(pos[0], pos[1])
 	tempo = 1
 	timer.start()

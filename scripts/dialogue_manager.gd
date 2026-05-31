@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func start_dialogue(lines):
 
-	get_tree().paused = true
+	#get_tree().paused = true
 	
 	dialogue_lines = lines
 	current_line_index = 0
@@ -37,7 +37,6 @@ func advence_dialogue():
 		name_text.text = dialogue_lines[current_line_index][0]
 		dialogue_text.text = dialogue_lines[current_line_index][1]
 	else:
-		get_tree().pause = false
 		dialogue_active = false
 		dialogue_box.visible = false
 		acabou.emit()

@@ -4,11 +4,13 @@ const TRANSICAO =  preload("res://menu/transicao.tscn")
 func _on_player_1_morte_1() -> void:
 	get_node("Player1").text = 'Player 1 PERDEU!'
 	get_node("Player2").text = 'VENCEU! PLAYER 2'
+	await get_tree().create_timer(2).timeout
 	morte_transicao()
 
 func _on_player_2_morte_2() -> void:
 	get_node("Player2").text = 'PERDEU! PLAYER 2'
 	get_node("Player1").text = 'PLAYER 1 VENCEU!'
+	await get_tree().create_timer(2).timeout
 	morte_transicao()
 	
 func morte_transicao():

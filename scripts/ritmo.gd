@@ -1,9 +1,9 @@
 extends Node
 
-#@export var mean: float;
-#@export var stdDev: float;
-var mean = 48373
-var stdDev = 70000
+@export var mean: float;
+@export var stdDev: float;
+#var mean = 48373
+#var stdDev = 70000
 func in_time(gameTime: int, inputTime: int):
 	'''
 	Recebe dois argumentos: gameTime, inputTime
@@ -11,7 +11,7 @@ func in_time(gameTime: int, inputTime: int):
 	Retorna se o input se encaixa no ritmo com base nas variáveis de calibração
 	'''
 	
-	var threshold = 70000;
+	var threshold = 100000;
 	
 	var offsetPoint = gameTime+mean;
 	var lowerBoundary = offsetPoint-threshold;
