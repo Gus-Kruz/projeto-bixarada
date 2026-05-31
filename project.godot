@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="projeto bixarada"
+run/main_scene="uid://c3c4wdfuye3h6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://cena_jogador/icon.svg"
 
 [autoload]
 
 Ritmo="*uid://f4vtqe5ehbar"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [display]
 
