@@ -37,6 +37,7 @@ func ataque_forte(player_x, player_y):
 	forte.queue_free()
 var morreu = false
 var input = "nada"
+signal morte1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if self.position.x > player2.position.x:
@@ -49,6 +50,7 @@ func _process(delta: float) -> void:
 		return
 	if vida <= 0:
 		print("morreu")
+		morte1.emit()
 		morreu = true
 	if Input.is_action_just_pressed("cima1"):
 		inputTimes.append(Time.get_ticks_usec())
@@ -90,9 +92,11 @@ func _on_timer_timeout() -> void:
 	timerTimes.append(Time.get_ticks_usec())
 	timer.start()
 	await get_tree().create_timer(0.07).timeout
+	if input == player2.input and input == "fraco" or input =="forte":
+		return
 	if input == "cima":
 		pos[1] -= 120
-		await get_tree().create_timer(bpm-0.07).timeout
+		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	if input == "esquerda":
 		pos[0] -= 120

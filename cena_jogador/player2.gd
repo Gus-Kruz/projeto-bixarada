@@ -37,6 +37,7 @@ func ataque_forte(player_x, player_y):
 	forte.queue_free()
 var morreu = false
 var input = "nada"
+signal morte2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if self.position.x > player1.position.x:
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	if vida <= 0:
 		print("morreu")
 		morreu = true
+		morte2.emit()
 	if Input.is_action_just_pressed("cima2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
@@ -90,9 +92,11 @@ func _on_timer_timeout() -> void:
 	timerTimes.append(Time.get_ticks_usec())
 	timer.start()
 	await get_tree().create_timer(0.07).timeout
+	if input == player1.input and input == "fraco" or input =="forte":
+		return
 	if input == "cima":
 		pos[1] -= 120
-		await get_tree().create_timer(bpm-0.07).timeout
+		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	if input == "esquerda":
 		pos[0] -= 120
