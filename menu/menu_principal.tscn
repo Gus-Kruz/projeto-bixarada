@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c3c4wdfuye3h6"]
+[gd_scene format=3 uid="uid://cyto5saruu344"]
 
-[ext_resource type="Script" uid="uid://bp77exajhas1v" path="res://menu/menu_principal.gd" id="1_5peh6"]
+[ext_resource type="Script" uid="uid://bp77exajhas1v" path="res://scripts/menu_principal.gd" id="1_5peh6"]
 [ext_resource type="Texture2D" uid="uid://bxbsfh5boret7" path="res://imagens/Logo placeholder.png" id="1_kaf03"]
 [ext_resource type="Texture2D" uid="uid://dikvpq61pmlhv" path="res://imagens/backgrounds/Menu-principal.png" id="2_35p1k"]
 [ext_resource type="Texture2D" uid="uid://di8ndjty544dk" path="res://imagens/jogar placeholder.png" id="2_kaf03"]
