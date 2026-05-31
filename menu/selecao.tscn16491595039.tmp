@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://4b5xpjxhefad"]
+
+[ext_resource type="Texture2D" uid="uid://bs5hhlax7t2i7" path="res://imagens/backgrounds/Background-liso.png" id="1_rfrvn"]
+[ext_resource type="Script" uid="uid://b0bsg2ixfp8pq" path="res://menu/selecao.gd" id="1_rpk3s"]
+[ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="1_v6eyu"]
+[ext_resource type="Texture2D" uid="uid://c740346dy7ymi" path="res://imagens/personagens/carlos/carlos-selecao.png" id="3_rpk3s"]
+[ext_resource type="Texture2D" uid="uid://ch0lt33uyobay" path="res://imagens/personagens/carlos/carlos-escolhido.png" id="4_d4vk5"]
+[ext_resource type="Texture2D" uid="uid://c07o3ojf6hctf" path="res://imagens/personagens/lorena/lorena-escolhido.png" id="5_uh61i"]
+[ext_resource type="Texture2D" uid="uid://dp68lkpp7e8by" path="res://imagens/personagens/lorena/lorena-selecao.png" id="6_rfrvn"]
+[ext_resource type="Texture2D" uid="uid://biqqxrpag8uiw" path="res://imagens/personagens/rogerio/rogerio-escolhido.png" id="7_rpk3s"]
+[ext_resource type="Texture2D" uid="uid://ckjyg1ljahcam" path="res://imagens/personagens/rogerio/rogerio-selecao.png" id="8_d4vk5"]
+
+[node name="selecao" type="Node2D" unique_id=1270416806]
+script = ExtResource("1_rpk3s")
+
+[node name="background" type="TextureRect" parent="." unique_id=224515199]
+texture = ExtResource("1_rfrvn")
+
+[node name="selecao-margin" type="MarginContainer" parent="." unique_id=656058698]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1856.0
+offset_bottom = 1024.0
+
+[node name="players" type="VBoxContainer" parent="selecao-margin" unique_id=1262435002]
+layout_mode = 2
+
+[node name="texto" type="Label" parent="selecao-margin/players" unique_id=794132979]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 80
+text = "Escolha seu personagem!"
+horizontal_alignment = 1
+
+[node name="personagens" type="HBoxContainer" parent="selecao-margin/players" unique_id=870184338]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.68
+
+[node name="rogerio" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=931556182]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_rpk3s")
+texture_pressed = ExtResource("4_d4vk5")
+texture_hover = ExtResource("4_d4vk5")
+
+[node name="carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("5_uh61i")
+texture_pressed = ExtResource("6_rfrvn")
+texture_hover = ExtResource("6_rfrvn")
+
+[node name="lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("7_rpk3s")
+texture_pressed = ExtResource("8_d4vk5")
+texture_hover = ExtResource("8_d4vk5")
+
+[node name="player" type="HBoxContainer" parent="selecao-margin/players" unique_id=1233503707]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="player1" type="VBoxContainer" parent="selecao-margin/players/player" unique_id=2074147866]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="player1-label" type="Label" parent="selecao-margin/players/player/player1" unique_id=1843542588]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 65
+text = "PLAYER 01"
+
+[node name="nome1" type="Label" parent="selecao-margin/players/player/player1" unique_id=290282649]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 120
+text = ">> ROGERIO"
+
+[node name="texto" type="Label" parent="selecao-margin/players/player" unique_id=313308512]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 150
+text = "VS"
+horizontal_alignment = 1
+
+[node name="player2" type="VBoxContainer" parent="selecao-margin/players/player" unique_id=478676901]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="player2-label" type="Label" parent="selecao-margin/players/player/player2" unique_id=829543509]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 65
+text = "PLAYQER 02"
+horizontal_alignment = 2
+
+[node name="nome2" type="Label" parent="selecao-margin/players/player/player2" unique_id=398789241]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6eyu")
+theme_override_font_sizes/font_size = 120
+text = "ROGERIO <<"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=1218643480]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

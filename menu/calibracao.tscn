@@ -23,7 +23,6 @@ texture = SubResource("PlaceholderTexture2D_0ge7o")
 
 [node name="Timer" type="Timer" parent="." unique_id=742412040]
 wait_time = 0.79
-one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=636313716]
 stream = ExtResource("2_dyd77")
