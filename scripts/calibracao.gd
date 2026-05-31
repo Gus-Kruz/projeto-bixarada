@@ -1,7 +1,8 @@
 extends Node
 
-var timerTimes: Array;
-var downTimes: Array;
+var timerTime: int;
+var downTime1: int;
+var downTime2: int;
 var diffTimes: Array;
 
 var timer;
@@ -15,8 +16,12 @@ func _ready() -> void:
 	text = $TextEdit;
 	
 func update() -> void:
-	var sum = float(diffTimes.reduce(func(accum, num): return accum+num));
-	var mean = sum/len(diffTimes);
+	# Time configs
+	diffTimes.append(downTime1-timerTime);
+	diffTimes.append(downTime2-timerTime);
+
+	var sum = diffTimes.reduce(func(accum, num): return accum+num);
+	var mean = float(sum)/len(diffTimes);
 	Ritmo.mean = mean;
 	
 	var stdDev = (diffTimes.reduce(func(accum, num): return accum+(num-mean)**2))/len(diffTimes);
@@ -29,15 +34,21 @@ func update() -> void:
 
 var i = 0;
 # Flag para restringir atualizações de diffTimes
-var updateFlag: bool = false;
+var updateFlag1: bool = false;
+var updateFlag2: bool = false;
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("cima2"): downTimes.append(Time.get_ticks_usec());
+	if Input.is_action_just_pressed("cima1"):
+		downTime1 = Time.get_ticks_usec();
+		updateFlag1 = true;
+	if Input.is_action_just_pressed("cima2"):
+		downTime2 = Time.get_ticks_usec();
+		updateFlag2 = true;
 	
-	if len(timerTimes) == len(downTimes) and updateFlag and i<10:
-		diffTimes.append(downTimes[-1]-timerTimes[-1]);
-		updateFlag = false;
-		
+	if updateFlag1 and updateFlag2 and updateFlag3 and i<10:
 		update();
+		updateFlag1 = false;
+		updateFlag2 = false;
+		updateFlag3 = false;
 		i+=1;
 		
 
@@ -51,10 +62,13 @@ func _on_pressed() -> void:
 	audio.play();
 
 func _on_audio_stream_player_finished() -> void:
-	timer.start();
-	audio.play();
+	if i<10:
+		timer.start();
+		audio.play();
+	else: timer.stop();
 
+var updateFlag3: bool = false
 func _on_timer_timeout() -> void:
+	timerTime = Time.get_ticks_usec();
+	updateFlag3 = true;
 	show_block();
-	timerTimes.append(Time.get_ticks_usec());
-	updateFlag = true;

@@ -11,7 +11,9 @@ func in_time(gameTime: int, inputTime: int):
 	Retorna se o input se encaixa no ritmo com base nas variáveis de calibração
 	'''
 	
+	var threshold = 70000;
+	
 	var offsetPoint = gameTime+mean;
-	var lowerBoundary = offsetPoint-stdDev;
-	var higherBoundary = offsetPoint+stdDev;
+	var lowerBoundary = offsetPoint-threshold;
+	var higherBoundary = offsetPoint+threshold;
 	return inputTime > lowerBoundary and inputTime < higherBoundary;
