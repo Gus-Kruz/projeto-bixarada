@@ -1,13 +1,16 @@
 extends TextureRect
 
-@onready var no_referencia = get_node('res://menu/selecao.tscn')
-var player1 = no_referencia.player1
-var player2 = no_referencia.player2
-#var player1 = 'lorena'
-#var player2 = 'carlos'
-var dialogo = []
+#@onready var no_referencia = get_node('res://menu/selecao.tscn')
+#var player1 = no_referencia.player1
+#var player2 = no_referencia.player2
+var player1 = 'lorena'
+var player2 = 'carlos'
+var dialogo = [["erro", "Não era para vermos isso"]]
 
 func _ready() -> void:
+	#var no_referencia = get_node('res://menu/selecao.tscn')
+	#var player1 = no_referencia.player1
+	#var player2 = no_referencia.player2
 	if (player1 == 'rogerio' and player2 =='carlos') or ((player2 == 'rogerio' and player1 =='carlos')):
 		dialogo = [
 		['Lorena', 'Vocês parecem desanimados. O que aconteceu?'],
@@ -47,5 +50,6 @@ func _ready() -> void:
 		['Carlos','Para onde você fica olhando?... Procurando ajuda dos seus amigos?…'],
 		['Lorena','Hehehe, você nem sabe quanto! Espero que VOCÊ trate de ganhar para mim.']
 		]
-# Called when the node enters the scene tree for the first time.
+
 	DialogueManager.start_dialogue(dialogo)
+	get_tree().change_scene_to_file("res://cenas/cutscene.tscn")
