@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0s6s2d1naje7"
-path="res://.godot/imported/New Piskel-1.png.png-c14d3dd0e8f28735fe4018e820cd4b6f.ctex"
+uid="uid://c53whn17g4gil"
+path="res://.godot/imported/lorena_fraco1.png-ec7db10c7cfbaf985631b299308f27ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-c14d3dd0e8f28735fe4018e820cd4b6f.ctex"]
+source_file="res://imagens/personagens/lorena/lorena_fraco1.png"
+dest_files=["res://.godot/imported/lorena_fraco1.png-ec7db10c7cfbaf985631b299308f27ab.ctex"]
 
 [params]
 
