@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv2dwp80ff1qs"
-path="res://.godot/imported/sair placheolder.png-b8a78a22fce68e3f64b520bf4912faf1.ctex"
+uid="uid://di8ndjty544dk"
+path="res://.godot/imported/jogar placeholder.png-87c35788f91ed9080baef3021f3e3f20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/sair placheolder.png"
-dest_files=["res://.godot/imported/sair placheolder.png-b8a78a22fce68e3f64b520bf4912faf1.ctex"]
+source_file="res://imagens/jogar placeholder.png"
+dest_files=["res://.godot/imported/jogar placeholder.png-87c35788f91ed9080baef3021f3e3f20.ctex"]
 
 [params]
 
