@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv340lyedgiqi"
-path="res://.godot/imported/lorena_normal1.PNG-3e7ebe5ed239e545e0c6a8cc40e1488e.ctex"
+uid="uid://csfrq7dmkf35r"
+path="res://.godot/imported/carlos-forte1.png-902396b70dbc0d1cfc339cd4416adca6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/personagens/lorena/lorena_normal1.PNG"
-dest_files=["res://.godot/imported/lorena_normal1.PNG-3e7ebe5ed239e545e0c6a8cc40e1488e.ctex"]
+source_file="res://imagens/personagens/carlos/carlos-forte1.png"
+dest_files=["res://.godot/imported/carlos-forte1.png-902396b70dbc0d1cfc339cd4416adca6.ctex"]
 
 [params]
 
