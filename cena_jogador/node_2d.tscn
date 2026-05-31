@@ -2,6 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
 [ext_resource type="PackedScene" uid="uid://cuvmupkmb8er0" path="res://cena_jogador/player2.tscn" id="2_0tn1g"]
+[ext_resource type="PackedScene" uid="uid://cw0m84j5g4hhf" path="res://cena_jogador/barrante.tscn" id="3_12ny2"]
+[ext_resource type="PackedScene" uid="uid://brs8y7mjtlgdw" path="res://cena_jogador/nota.tscn" id="4_i80d3"]
+[ext_resource type="PackedScene" uid="uid://b1mqlyyhbeivr" path="res://cena_jogador/nota2.tscn" id="5_shl6t"]
+[ext_resource type="Texture2D" uid="uid://day8gpnm02u1u" path="res://imagens/healthbarUnder.png" id="6_k14jk"]
+[ext_resource type="Script" uid="uid://cpcwyhoqca21p" path="res://cena_jogador/progress_bar.gd" id="6_shl6t"]
+[ext_resource type="Texture2D" uid="uid://dcr6r17amfpgg" path="res://imagens/healthbarProgress.png" id="7_b3ru7"]
+[ext_resource type="Script" uid="uid://chxp4baaidhmd" path="res://cena_jogador/texture_progress_bar_2.gd" id="9_b3ru7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0tn1g"]
 
@@ -23,5 +30,58 @@ position = Vector2(792, 237)
 scale = Vector2(158.5, 158.5)
 texture = SubResource("PlaceholderTexture2D_0tn1g")
 
+[node name="Barrante" parent="." unique_id=832938600 instance=ExtResource("3_12ny2")]
+z_index = 1
+position = Vector2(960, 1000)
+
+[node name="Nota" parent="." unique_id=8498666 instance=ExtResource("4_i80d3")]
+position = Vector2(2000, 1000)
+
+[node name="Nota2" parent="." unique_id=1166741449 instance=ExtResource("5_shl6t")]
+position = Vector2(-80, 1000)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1292113719]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=496553859]
+modulate = Color(0, 0.8666667, 1, 1)
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1920.0
+offset_right = -1856.0
+offset_bottom = 40.0
+grow_horizontal = 0
+scale = Vector2(8, 8)
+value = 100.0
+texture_under = ExtResource("6_k14jk")
+texture_progress = ExtResource("7_b3ru7")
+script = ExtResource("6_shl6t")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer" unique_id=1117762866]
+modulate = Color(1, 0.83137256, 0.3019608, 1)
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -515.0
+offset_right = -451.0
+offset_bottom = 40.0
+grow_horizontal = 0
+scale = Vector2(8, 8)
+value = 100.0
+texture_under = ExtResource("6_k14jk")
+texture_progress = ExtResource("7_b3ru7")
+script = ExtResource("9_b3ru7")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="forte" from="Player1" to="CanvasLayer/TextureProgressBar" method="_on_player_1_forte"]
+[connection signal="fraco" from="Player1" to="CanvasLayer/TextureProgressBar" method="_on_player_1_fraco"]
+[connection signal="forte" from="Player2" to="CanvasLayer/TextureProgressBar2" method="_on_player_2_forte"]
+[connection signal="fraco" from="Player2" to="CanvasLayer/TextureProgressBar2" method="_on_player_2_fraco"]
 [connection signal="timeout" from="Timer" to="Player1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Barrante" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Nota" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Nota2" method="_on_timer_timeout"]
