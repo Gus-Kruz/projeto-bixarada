@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://h5rsrh1tr6ka"]
+
+[ext_resource type="Script" uid="uid://deouflvej3abn" path="res://cena_jogador/barrante.gd" id="1_nl7dh"]
+[ext_resource type="Texture2D" uid="uid://vlcu8rbkmq8j" path="res://imagens/patinha-pixilart.png" id="1_vf63j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf63j"]
+
+[node name="Node2D" type="Node2D" unique_id=832938600]
+script = ExtResource("1_nl7dh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2078837137]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_vf63j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2146890213]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=733651971]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_vf63j")

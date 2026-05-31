@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://da8xtqq8uvdcv"]
 
-[ext_resource type="Script" uid="uid://clna3opl5k6pb" path="res://menu/config.gd" id="1_1bbqe"]
+[ext_resource type="Script" uid="uid://clna3opl5k6pb" path="res://scripts/config.gd" id="1_1bbqe"]
 [ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="1_nmity"]
 [ext_resource type="Texture2D" uid="uid://dj0s7ffdjs1p0" path="res://imagens/voltar placeholder.png" id="2_hxsha"]
+[ext_resource type="Texture2D" uid="uid://cwu4da02nghof" path="res://imagens/backgrounds/Background-liso.png" id="4_1bbqe"]
+[ext_resource type="Texture2D" uid="uid://dtkkm2it0glib" path="res://imagens/calibrar placeholder.png" id="4_qplti"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nmity"]
 font = ExtResource("1_nmity")
@@ -23,6 +25,13 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1bbqe")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=932521047]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_1bbqe")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1526654533]
 layout_mode = 1
@@ -74,6 +83,9 @@ expand_icon = true
 
 [node name="calibrar" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1323606381]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture_normal = ExtResource("4_qplti")
 
 [node name="voltar" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1140641615]
 layout_mode = 2
@@ -81,11 +93,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 10
 texture_normal = ExtResource("2_hxsha")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=932521047]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/calibrar" to="." method="_on_calibrar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]

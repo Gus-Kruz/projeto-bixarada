@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cd82wptkjkre5"]
+
+[ext_resource type="Shader" uid="uid://ci428oury1akn" path="res://recursos/transicao.gdshader" id="1_ck0xh"]
+
+[sub_resource type="Animation" id="Animation_xr3vq"]
+resource_name = "fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.000000095, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7s2vq"]
+_data = {
+&"fade": SubResource("Animation_xr3vq")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xr3vq"]
+shader = ExtResource("1_ck0xh")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 2.000000095
+shader_parameter/pixel_size = 2.0
+shader_parameter/resolution = Vector2(400, 400)
+shader_parameter/dither_offset = Vector2(2, 0)
+shader_parameter/bayer_size = 2
+shader_parameter/interpolate = true
+shader_parameter/invert = true
+shader_parameter/falloff = 2.5
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[node name="transicao" type="Node2D" unique_id=630443574]
+
+[node name="fade" type="AnimationPlayer" parent="." unique_id=1960134727]
+libraries/ = SubResource("AnimationLibrary_7s2vq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1332355200]
+top_level = true
+visibility_layer = 512
+z_index = 200
+material = SubResource("ShaderMaterial_xr3vq")
+offset_right = 1920.0
+offset_bottom = 1080.0

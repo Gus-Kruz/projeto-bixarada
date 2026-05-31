@@ -19,9 +19,9 @@ func _ready() -> void:
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
 	if orientacao == "direita":
-		fraco.position = Vector2(player_x+180, player_y+60)
+		fraco.position = Vector2(player_x+120, player_y+60)
 	else:
-		fraco.position = Vector2(player_x-180, player_y+60)
+		fraco.position = Vector2(player_x-120, player_y+60)
 	get_parent().add_child(fraco)
 	await get_tree().create_timer(bpm).timeout
 	fraco.queue_free()
@@ -29,14 +29,15 @@ func ataque_fraco(player_x, player_y):
 func ataque_forte(player_x, player_y):
 	var forte = ataqueforte.instantiate()
 	if orientacao == "direita":
-		forte.position = Vector2(player_x+180, player_y-60)
+		forte.position = Vector2(player_x+120, player_y-60)
 	else:
-		forte.position = Vector2(player_x-180, player_y-60)
+		forte.position = Vector2(player_x-120, player_y-60)
 	get_parent().add_child(forte)
 	await get_tree().create_timer(bpm).timeout
 	forte.queue_free()
 var morreu = false
-
+var input = "nada"
+signal morte2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if self.position.x > player1.position.x:
@@ -45,46 +46,76 @@ func _physics_process(delta: float) -> void:
 	else:
 		orientacao = "direita"
 		$Sprite2D.flip_h = false
-	if morreu:
+	if morreu or player1.morreu:
 		return
 	if vida <= 0:
 		print("morreu")
-		morreu = true 
+		morreu = true
+		morte2.emit()
 	if Input.is_action_just_pressed("cima2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[1] -= 120
-			await get_tree().create_timer(bpm).timeout
-			pos[1] += 120
+			input = "cima"
 	if Input.is_action_just_pressed("esquerda2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[0] -= 120
+			input = "esquerda"
 	if Input.is_action_just_pressed("direita2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[0] += 120
+			input = "direita"
 	if Input.is_action_just_pressed("fraco2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			ataque_fraco(pos[0], pos[1])
+			input = "fraco"
 	if Input.is_action_just_pressed("forte2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			ataque_forte(pos[0], pos[1])
+			input = "forte"
 	self.position = Vector2(pos[0], pos[1])
 
-
+signal fraco
+signal forte
 func _on_hurtbox_2d_2_area_entered(area: Area2D) -> void:
 	if area.get_name() == "fraco":
 		print("fraco")
 		vida -= 10
 		print("player 2 " + str(vida))
+		fraco.emit()
 	elif area.get_name() == "forte":
 		print("forte")
 		vida -= 20
 		print("player 2 " + str(vida))
+		forte.emit()
 		
 func _on_timer_timeout() -> void:
 	timerTimes.append(Time.get_ticks_usec())
 	timer.start()
+	await get_tree().create_timer(0.07).timeout
+	if input == player1.input and input == "fraco":
+		return
+	elif input == player1.input and input == "forte":
+		return
+	elif input == "cima":
+		pos[1] -= 120
+		await get_tree().create_timer(bpm).timeout
+		pos[1] += 120
+	elif input == "esquerda" and self.position.x > 60:
+		if player1.position.x == self.position.x - 120 and player1.input != "esquerda":
+			pos[0] -= 240
+		elif player1.position.x == self.position.x - 240 and player1.input == "direita":
+			pos[0] -= 240
+		else:
+			pos[0] -= 120
+	elif input == "direita" and self.position.x < 1860:
+		if player1.position.x == self.position.x + 120 and player1.input != "direita":
+			pos[0] += 240
+		elif player1.position.x == self.position.x + 240 and player1.input == "esquerda":
+			pos[0] += 240
+		else:
+			pos[0] += 120
+	elif input == "fraco" and player1.input != "forte":
+		ataque_fraco(pos[0], pos[1])
+	elif input == "forte":
+		ataque_forte(pos[0], pos[1])
+	input = "nada"

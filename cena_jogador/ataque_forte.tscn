@@ -9,7 +9,7 @@ size = Vector2(128, 127.46667)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234665738]
 rotation = 1.5707964
-scale = Vector2(0.938, 1.875)
+scale = Vector2(0.938, 0.938)
 texture = ExtResource("1_diblt")
 
 [node name="forte" type="Area2D" parent="Sprite2D" unique_id=1836755468]

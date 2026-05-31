@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://bcyltrhx2tevw"]
 
 [ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://b2v7qelv712qp" path="res://imagens/backgrounds/background-luta.png" id="1_wdbhn"]
 [ext_resource type="PackedScene" uid="uid://cuvmupkmb8er0" path="res://cena_jogador/player2.tscn" id="2_0tn1g"]
+[ext_resource type="PackedScene" uid="uid://h5rsrh1tr6ka" path="res://cena_jogador/barrante.tscn" id="3_12ny2"]
+[ext_resource type="PackedScene" uid="uid://brs8y7mjtlgdw" path="res://cena_jogador/nota.tscn" id="4_i80d3"]
+[ext_resource type="PackedScene" uid="uid://b1mqlyyhbeivr" path="res://cena_jogador/nota2.tscn" id="5_shl6t"]
+[ext_resource type="Texture2D" uid="uid://day8gpnm02u1u" path="res://imagens/healthbarUnder.png" id="6_k14jk"]
+[ext_resource type="Script" uid="uid://cpcwyhoqca21p" path="res://cena_jogador/progress_bar.gd" id="6_shl6t"]
+[ext_resource type="Texture2D" uid="uid://dcr6r17amfpgg" path="res://imagens/healthbarProgress.png" id="7_b3ru7"]
+[ext_resource type="Script" uid="uid://cy4i7quv0jgts" path="res://cena_jogador/canvas_layer.gd" id="8_iqe8l"]
+[ext_resource type="Script" uid="uid://chxp4baaidhmd" path="res://cena_jogador/texture_progress_bar_2.gd" id="9_b3ru7"]
+[ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="11_1w71b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0tn1g"]
 
-[node name="Node2D" type="Node2D" unique_id=1532618862]
+[node name="Node2D2" type="Node2D" unique_id=1532618862]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1318858145]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_wdbhn")
 
 [node name="Player1" parent="." unique_id=966840436 node_paths=PackedStringArray("player2") instance=ExtResource("1_0e48y")]
 player2 = NodePath("../Player2")
@@ -23,5 +38,85 @@ position = Vector2(792, 237)
 scale = Vector2(158.5, 158.5)
 texture = SubResource("PlaceholderTexture2D_0tn1g")
 
+[node name="Barrante" parent="." unique_id=832938600 instance=ExtResource("3_12ny2")]
+z_index = 1
+position = Vector2(960, 1000)
+
+[node name="Nota" parent="." unique_id=8498666 instance=ExtResource("4_i80d3")]
+position = Vector2(2000, 1000)
+
+[node name="Nota2" parent="." unique_id=1166741449 instance=ExtResource("5_shl6t")]
+position = Vector2(-80, 1000)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1292113719]
+script = ExtResource("8_iqe8l")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=496553859]
+modulate = Color(0, 0.8666667, 1, 1)
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.027777778
+anchor_right = 1.0
+anchor_bottom = -0.027777778
+offset_left = -1860.0
+offset_top = 158.0
+offset_right = -1796.0
+offset_bottom = 198.0
+scale = Vector2(8, 8)
+value = 100.0
+texture_under = ExtResource("6_k14jk")
+texture_progress = ExtResource("7_b3ru7")
+script = ExtResource("6_shl6t")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="CanvasLayer" unique_id=1117762866]
+modulate = Color(1, 0.83137256, 0.3019608, 1)
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.027777778
+anchor_right = 1.0
+anchor_bottom = -0.027777778
+offset_left = -572.0
+offset_top = 158.0
+offset_right = -508.0
+offset_bottom = 198.0
+grow_horizontal = 0
+scale = Vector2(8, 8)
+value = 100.0
+texture_under = ExtResource("6_k14jk")
+texture_progress = ExtResource("7_b3ru7")
+script = ExtResource("9_b3ru7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Player1" type="Label" parent="CanvasLayer" unique_id=1645223761]
+offset_left = 60.0
+offset_top = 75.0
+offset_right = 341.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("11_1w71b")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER 1"
+
+[node name="Player2" type="Label" parent="CanvasLayer" unique_id=1386674697]
+offset_left = 1348.0
+offset_top = 75.0
+offset_right = 1859.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("11_1w71b")
+theme_override_font_sizes/font_size = 60
+text = "PLAYER 2"
+horizontal_alignment = 2
+
+[connection signal="forte" from="Player1" to="CanvasLayer/TextureProgressBar" method="_on_player_1_forte"]
+[connection signal="fraco" from="Player1" to="CanvasLayer/TextureProgressBar" method="_on_player_1_fraco"]
+[connection signal="morte1" from="Player1" to="CanvasLayer" method="_on_player_1_morte_1"]
+[connection signal="forte" from="Player2" to="CanvasLayer/TextureProgressBar2" method="_on_player_2_forte"]
+[connection signal="fraco" from="Player2" to="CanvasLayer/TextureProgressBar2" method="_on_player_2_fraco"]
+[connection signal="morte2" from="Player2" to="CanvasLayer" method="_on_player_2_morte_2"]
 [connection signal="timeout" from="Timer" to="Player1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Barrante" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Nota" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Nota2" method="_on_timer_timeout"]
