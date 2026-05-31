@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	pos[0] += 34.67
+	pos[0] += 40.444444444
 	self.position = Vector2(pos[0], pos[1])
 
 func disable_node(node):
