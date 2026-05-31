@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://brs8y7mjtlgdw"]
 
-[ext_resource type="Script" uid="uid://ixet1rfqoc6s" path="res://cena_jogador/nota.gd" id="1_kmwnm"]
+[ext_resource type="Script" path="res://cena_jogador/nota.gd" id="1_kmwnm"]
 [ext_resource type="Texture2D" uid="uid://c0s6s2d1naje7" path="res://imagens/nota.png" id="1_t8300"]
-[ext_resource type="Script" uid="uid://casslg434r6l4" path="res://cena_jogador/animation_player.gd" id="2_h36lr"]
+[ext_resource type="Script" path="res://cena_jogador/animation_player.gd" id="2_h36lr"]
 
 [sub_resource type="Animation" id="Animation_kmwnm"]
 length = 0.001
