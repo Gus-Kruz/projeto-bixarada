@@ -52,4 +52,4 @@ func _ready() -> void:
 		]
 
 	DialogueManager.start_dialogue(dialogo)
-	get_tree().change_scene_to_file("res://cenas/cutscene.tscn")
+	
