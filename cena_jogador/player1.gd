@@ -8,12 +8,16 @@ var vida = 100
 var orientacao = "direita"
 var timerTime
 var inputTime
+var tempo
+var personagem
+
 @export var player2 : Node2D
 @onready var timer = get_node("../Timer")
 @onready var sprite = get_node("../Sprite2D")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.position = Vector2(pos[0], pos[1])
+	tempo = 1
 	timer.start()
 	
 func ataque_fraco(player_x, player_y):
@@ -92,6 +96,7 @@ func _on_timer_timeout() -> void:
 	timerTime = Time.get_ticks_usec()
 	timer.start()
 	await get_tree().create_timer(0.07).timeout
+	tempo += 1 
 	if input == player2.input and input == "fraco":
 		return
 	elif input == player2.input and input == "forte":
@@ -120,3 +125,4 @@ func _on_timer_timeout() -> void:
 		print("forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"
+	
