@@ -10,7 +10,6 @@ var dialogue_active: bool = false
 
 func _ready() -> void:
 	dialogue_box.visible = false
-	start_dialogue([["Lucas", "Estou falando!"], ["cOCA zERO", "mUTE NO lUCAS!"]])
 
 func start_dialogue(lines):
 	get_tree().paused = true
