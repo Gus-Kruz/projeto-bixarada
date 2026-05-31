@@ -1,8 +1,7 @@
 extends Area2D
 
 
-const SPEED = 300.0
-const BPM = 80.0
+const BPM = 100
 var dentro = false
 
 func _physics_process(delta: float) -> void:

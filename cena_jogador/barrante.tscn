@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cw0m84j5g4hhf"]
+[gd_scene format=3 uid="uid://h5rsrh1tr6ka"]
 
 [ext_resource type="Script" uid="uid://deouflvej3abn" path="res://cena_jogador/barrante.gd" id="1_nl7dh"]
 [ext_resource type="Texture2D" uid="uid://vlcu8rbkmq8j" path="res://imagens/patinha-pixilart.png" id="1_vf63j"]
