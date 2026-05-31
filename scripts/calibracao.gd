@@ -80,3 +80,16 @@ func _on_timer_timeout() -> void:
 	timerTime = Time.get_ticks_usec();
 	updateFlag3 = true;
 	show_block();
+
+func transicao(caminho: String):
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node("fade")
+	fade.play('fade')
+	await fade.animation_finished
+	get_tree().change_scene_to_file(caminho)
+
+
+func _on_voltar_pressed() -> void:
+	transicao("res://menu/Config.tscn")
+	
