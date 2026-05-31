@@ -1,6 +1,9 @@
 extends Panel
 
 var TRANSICAO = preload('res://menu/transicao.tscn')
+var volume: float = 1.5
+var fullscreen: bool = true
+
 
 func _ready() -> void:
 	var transicao = TRANSICAO.instantiate()
@@ -9,6 +12,8 @@ func _ready() -> void:
 	fade.play_backwards('fade')
 	await fade.animation_finished
 	get_node("transicao").queue_free()
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(volume))
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN) if fullscreen else DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_h_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(value))
