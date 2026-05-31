@@ -8,6 +8,13 @@
 [node name="Calibracao" type="Node2D" unique_id=587787431]
 script = ExtResource("1_0ge7o")
 
+[node name="Voltar" type="Button" parent="." unique_id=1003969989]
+offset_left = 295.0
+offset_top = 481.0
+offset_right = 572.0
+offset_bottom = 1032.0
+text = "Voltar"
+
 [node name="Button" type="Button" parent="." unique_id=1894507924]
 offset_left = 428.0
 offset_top = 234.0
@@ -36,6 +43,7 @@ placeholder_text = "Passos:
 Offset:
 Desvio-padrão:"
 
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

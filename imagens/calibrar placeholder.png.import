@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckjyg1ljahcam"
-path="res://.godot/imported/rogerio-escolhido.png-4af63c79100119b9b42471dc885dbf2a.ctex"
+uid="uid://dtkkm2it0glib"
+path="res://.godot/imported/calibrar placeholder.png-796447db77783927deb64f05a9a5dfdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/personagens/rogerio/rogerio-escolhido.png"
-dest_files=["res://.godot/imported/rogerio-escolhido.png-4af63c79100119b9b42471dc885dbf2a.ctex"]
+source_file="res://imagens/calibrar placeholder.png"
+dest_files=["res://.godot/imported/calibrar placeholder.png-796447db77783927deb64f05a9a5dfdf.ctex"]
 
 [params]
 
