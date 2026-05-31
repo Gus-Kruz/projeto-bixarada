@@ -23,6 +23,7 @@ script = ExtResource("1_5peh6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=561242855]
 z_index = -1
+texture_filter = 3
 layout_mode = 2
 texture = ExtResource("8_35p1k")
 
@@ -45,6 +46,7 @@ size_flags_vertical = 6
 
 [node name="Jogar" type="TextureButton" parent="HBoxContainer/VBoxContainer/MenuOptions" unique_id=1989734103]
 layout_mode = 2
+size_flags_vertical = 3
 texture_normal = ExtResource("2_kaf03")
 stretch_mode = 3
 
