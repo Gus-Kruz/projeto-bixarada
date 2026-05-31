@@ -30,7 +30,8 @@ func muda_nome_player(personagem):
 		player1 = personagem
 		muda_texto('>> '+personagem,'/player1/nome1')
 		muda_cor(true,'/player1/player1-label')
-	elif player2 =='':
+		#get_node("selecao-margin/players/personagens/"+personagem).
+	elif player2 =='' and player1 != personagem:
 		player2 = personagem
 		muda_texto(personagem + ' <<','/player2/nome2')
 		muda_cor(true,'/player2/player2-label')

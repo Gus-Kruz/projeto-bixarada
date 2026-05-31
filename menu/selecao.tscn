@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4b5xpjxhefad"]
 
-[ext_resource type="Texture2D" uid="uid://bs5hhlax7t2i7" path="res://imagens/backgrounds/Background-liso.png" id="1_rfrvn"]
+[ext_resource type="Texture2D" uid="uid://cwu4da02nghof" path="res://imagens/backgrounds/Background-liso.png" id="1_rfrvn"]
 [ext_resource type="Script" uid="uid://b0bsg2ixfp8pq" path="res://menu/selecao.gd" id="1_rpk3s"]
 [ext_resource type="FontFile" uid="uid://mqk3gw84yky5" path="res://recursos/Pixelout Personal Use Only.ttf" id="1_v6eyu"]
 [ext_resource type="Texture2D" uid="uid://c740346dy7ymi" path="res://imagens/personagens/carlos/carlos-selecao.png" id="3_rpk3s"]
@@ -38,7 +38,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.68
 
-[node name="rogerio" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=931556182]
+[node name="Rogerio" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=931556182]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -46,7 +46,7 @@ texture_normal = ExtResource("7_rpk3s")
 texture_pressed = ExtResource("8_d4vk5")
 texture_hover = ExtResource("8_d4vk5")
 
-[node name="rogerio-nome" type="Label" parent="selecao-margin/players/personagens/rogerio" unique_id=186014391]
+[node name="rogerio-nome" type="Label" parent="selecao-margin/players/personagens/Rogerio" unique_id=186014391]
 layout_mode = 0
 offset_left = 162.0
 offset_top = 448.0
@@ -58,7 +58,7 @@ text = "Rogerio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
+[node name="Carlos" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1507646232]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -66,7 +66,7 @@ texture_normal = ExtResource("3_rpk3s")
 texture_pressed = ExtResource("4_d4vk5")
 texture_hover = ExtResource("4_d4vk5")
 
-[node name="carlos-nome" type="Label" parent="selecao-margin/players/personagens/carlos" unique_id=380268447]
+[node name="carlos-nome" type="Label" parent="selecao-margin/players/personagens/Carlos" unique_id=380268447]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 448.0
@@ -78,7 +78,7 @@ text = "Carlos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
+[node name="Lorena" type="TextureButton" parent="selecao-margin/players/personagens" unique_id=1053968241]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -86,7 +86,7 @@ texture_normal = ExtResource("5_uh61i")
 texture_pressed = ExtResource("6_rfrvn")
 texture_hover = ExtResource("6_rfrvn")
 
-[node name="lorena-nome" type="Label" parent="selecao-margin/players/personagens/lorena" unique_id=297580873]
+[node name="lorena-nome" type="Label" parent="selecao-margin/players/personagens/Lorena" unique_id=297580873]
 layout_mode = 0
 offset_left = 164.0
 offset_top = 448.0
@@ -150,7 +150,7 @@ horizontal_alignment = 2
 [node name="Timer" type="Timer" parent="." unique_id=1218643480]
 wait_time = 0.5
 
-[connection signal="pressed" from="selecao-margin/players/personagens/rogerio" to="." method="_on_rogerio_pressed"]
-[connection signal="pressed" from="selecao-margin/players/personagens/carlos" to="." method="_on_carlos_pressed"]
-[connection signal="pressed" from="selecao-margin/players/personagens/lorena" to="." method="_on_lorena_pressed"]
+[connection signal="pressed" from="selecao-margin/players/personagens/Rogerio" to="." method="_on_rogerio_pressed"]
+[connection signal="pressed" from="selecao-margin/players/personagens/Carlos" to="." method="_on_carlos_pressed"]
+[connection signal="pressed" from="selecao-margin/players/personagens/Lorena" to="." method="_on_lorena_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
