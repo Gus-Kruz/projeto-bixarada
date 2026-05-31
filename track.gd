@@ -31,6 +31,6 @@ func _process(delta: float) -> void:
 func perder():
 	if perdeu: return
 	perdeu = true
-	get_tree().change_scene_to_file('res://menu/menu_principal.tscn')
+	get_tree().change_scene_to_file('res://cenas/cutscene.tscn')
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

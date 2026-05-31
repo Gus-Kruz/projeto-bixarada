@@ -10,4 +10,4 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_voltar_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/cutscene.tscn")
+	get_tree().change_scene_to_file("res://menu/menu_principal.tscn")
