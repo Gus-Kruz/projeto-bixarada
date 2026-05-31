@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcyltrhx2tevw"]
 
 [ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://b2v7qelv712qp" path="res://imagens/backgrounds/background-luta.png" id="1_wdbhn"]
+[ext_resource type="Texture2D" uid="uid://cb7n1yfrvrule" path="res://imagens/backgrounds/background-luta.png" id="1_wdbhn"]
 [ext_resource type="PackedScene" uid="uid://cuvmupkmb8er0" path="res://cena_jogador/player2.tscn" id="2_0tn1g"]
 [ext_resource type="PackedScene" uid="uid://h5rsrh1tr6ka" path="res://cena_jogador/barrante.tscn" id="3_12ny2"]
 [ext_resource type="PackedScene" uid="uid://brs8y7mjtlgdw" path="res://cena_jogador/nota.tscn" id="4_i80d3"]
