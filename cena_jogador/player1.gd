@@ -4,7 +4,7 @@ extends Node2D
 var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
 var pos = [540,540]
-var bpm = 0.5
+var bpm = 0.42857
 var vida = 100
 var orientacao = "direita"
 var timerTime
