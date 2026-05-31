@@ -59,6 +59,7 @@ position = Vector2(583, 1)
 
 [node name="sprite_nota_verde" type="Sprite2D" parent="notas/nota_verde" unique_id=447494627]
 texture_filter = 3
+rotation = 3.1415927
 scale = Vector2(3.219, 3.219)
 texture = ExtResource("3_vhw2h")
 
@@ -71,15 +72,17 @@ position = Vector2(283, 1)
 
 [node name="sprite_nota_vermelha" type="Sprite2D" parent="notas/nota_vermelha" unique_id=686076255]
 texture_filter = 3
+rotation = 4.712389
 scale = Vector2(3.219, 3.219)
 texture = ExtResource("4_07pqx")
 
 [node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="notas/nota_vermelha" unique_id=1207075817]
-position = Vector2(0, 0.5)
+rotation = 4.712389
 shape = SubResource("RectangleShape2D_hqns4")
 
 [node name="nota_amarela" type="Area2D" parent="notas" unique_id=1038843578]
 position = Vector2(433, 1)
+rotation = 1.5707964
 
 [node name="sprite_nota_amarela" type="Sprite2D" parent="notas/nota_amarela" unique_id=928279092]
 texture_filter = 3
@@ -111,6 +114,7 @@ script = ExtResource("8_2vwrv")
 
 [node name="sprite_teclado_verde" type="Sprite2D" parent="teclados/teclado_verde" unique_id=756124825]
 texture_filter = 3
+rotation = 3.1415927
 scale = Vector2(3.219, 3.219)
 texture = ExtResource("7_k5kjr")
 
@@ -124,11 +128,13 @@ script = ExtResource("9_5lb0j")
 
 [node name="sprite_teclado_vermelho" type="Sprite2D" parent="teclados/teclado_vermelho" unique_id=1076777530]
 texture_filter = 3
+rotation = 4.712389
 scale = Vector2(3.219, 3.219)
 texture = ExtResource("7_k5kjr")
 
 [node name="hitbox_nota_vermelha" type="CollisionShape2D" parent="teclados/teclado_vermelho" unique_id=792902881]
 position = Vector2(0, 5)
+rotation = 4.712389
 shape = SubResource("RectangleShape2D_0h7mo")
 
 [node name="teclado_amarelo" type="Area2D" parent="teclados" unique_id=18662535]
@@ -137,6 +143,7 @@ position = Vector2(433, 737)
 script = ExtResource("10_n3dk4")
 
 [node name="sprite_teclado_amarelo" type="Sprite2D" parent="teclados/teclado_amarelo" unique_id=1843852604]
+rotation = 1.5707964
 scale = Vector2(3.219, 3.219)
 texture = ExtResource("7_k5kjr")
 

@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://b6ynd3cu8qvyc"]
+[gd_scene format=3 uid="uid://08qcvrg4821l"]
 
 [ext_resource type="Script" uid="uid://bduf5snfdp0dq" path="res://node_2d.gd" id="1_nr8wp"]
-[ext_resource type="Texture2D" uid="uid://bh5xqwlyga2f2" path="res://imagens/BACKGOUND_SYNTH-1.png.png" id="2_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://vlcu8rbkmq8j" path="res://imagens/patinha-pixilart.png" id="3_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://bfpv20nbwxxtt" path="res://imagens/backgrounds/background-ritmo.png" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bjso0bxy31hun" path="res://track.tscn" id="4_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://uqu3jkg3mqp8" path="res://imagens/controles.png" id="15_ta5nu"]
 
@@ -38,11 +38,10 @@ texture = ExtResource("3_0h7mo")
 [node name="sprite_background" type="Sprite2D" parent="background" unique_id=1130002752]
 texture_filter = 3
 position = Vector2(959.00006, 537)
-scale = Vector2(19.958334, 19.814814)
-texture = ExtResource("2_x0ka3")
+texture = ExtResource("3_q6r6c")
 
 [node name="track" parent="." unique_id=1785089555 instance=ExtResource("4_4d7sh")]
-player_id = null
+position = Vector2(-1, 1)
 
 [node name="track2" parent="." unique_id=249144321 instance=ExtResource("4_4d7sh")]
 position = Vector2(800, 0)

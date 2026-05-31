@@ -1,12 +1,12 @@
 extends Node2D
 
 var track = preload("res://track.tscn")
-var notas
-var teclados
-var BPM = 200
+var track_a
 func _ready() -> void:
-	notas = $track/notas.get_children()
-	teclados = $track/teclados.get_children()
+	var timer_morte = Timer.new()
+	track_a = $track
+	add_child(timer_morte)
+	pass
 
 
 func _physics_process(delta: float) -> void:
