@@ -1,4 +1,5 @@
 extends Node2D
+@onready var player1 = PersonagemDado.player1
 
 var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
@@ -15,6 +16,7 @@ var inputTime
 func _ready() -> void:
 	self.position = Vector2(pos[0], pos[1])
 	timer.start()
+	print(player1)
 	
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
