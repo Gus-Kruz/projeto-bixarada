@@ -42,10 +42,10 @@ signal morte2
 func _physics_process(delta: float) -> void:
 	if self.position.x > player1.position.x:
 		orientacao = "esquerda"
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = false
 	else:
 		orientacao = "direita"
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = true
 	if morreu or player1.morreu:
 		return
 	if vida <= 0:
@@ -97,10 +97,12 @@ func _on_timer_timeout() -> void:
 	elif input == player1.input and input == "forte":
 		return
 	elif input == "cima":
+		$AnimatedSprite2D.play("lorena_normal")
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	elif input == "esquerda" and self.position.x > 60:
+		$AnimatedSprite2D.play("lorena_normal")
 		if player1.position.x == self.position.x - 120 and player1.input != "esquerda":
 			pos[0] -= 240
 		elif player1.position.x == self.position.x - 240 and player1.input == "direita":
@@ -108,6 +110,7 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] -= 120
 	elif input == "direita" and self.position.x < 1860:
+		$AnimatedSprite2D.play("lorena_normal")
 		if player1.position.x == self.position.x + 120 and player1.input != "direita":
 			pos[0] += 240
 		elif player1.position.x == self.position.x + 240 and player1.input == "esquerda":
@@ -115,7 +118,9 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] += 120
 	elif input == "fraco" and player1.input != "forte":
+		$AnimatedSprite2D.play("lorena_fraco")
 		ataque_fraco(pos[0], pos[1])
 	elif input == "forte":
+		$AnimatedSprite2D.play("lorena_forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://4b5xpjxhefad"]
+[gd_scene format=3 uid="uid://lcmnq7wb42ch"]
 
 [ext_resource type="Texture2D" uid="uid://cwu4da02nghof" path="res://imagens/backgrounds/Background-liso.png" id="1_rfrvn"]
 [ext_resource type="Script" path="res://menu/selecao.gd" id="1_rpk3s"]

@@ -40,6 +40,7 @@ func muda_nome_player(personagem):
 	if player1 == '':
 		var figura = ' '
 		player1 = personagem
+		PersonagemDado.player1 = personagem
 		muda_texto('>> '+personagem,'/player1/nome1')
 		muda_cor(true,'/player1/player1-label')
 		if personagem == 'carlos':
@@ -51,6 +52,7 @@ func muda_nome_player(personagem):
 		get_node("selecao-margin/players/personagens/"+personagem).set_texture_normal(figura)
 	elif player2 =='' and player1 != personagem:
 		player2 = personagem
+		PersonagemDado.player2 = personagem
 		var figura = ' '
 		muda_texto(personagem + ' <<','/player2/nome2')
 		muda_cor(true,'/player2/player2-label')

@@ -6,6 +6,7 @@
 size = Vector2(128, 127.46667)
 
 [node name="Ataque" type="Node2D" unique_id=439587759]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234665738]
 rotation = 1.5707964

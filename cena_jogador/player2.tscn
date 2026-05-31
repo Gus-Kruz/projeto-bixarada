@@ -2,14 +2,207 @@
 
 [ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://cena_jogador/icon.svg" id="1_rihsh"]
 [ext_resource type="Script" uid="uid://dunvdjtsyhv4g" path="res://cena_jogador/player2.gd" id="2_bsrsl"]
+[ext_resource type="Texture2D" uid="uid://csfrq7dmkf35r" path="res://imagens/personagens/carlos/carlos-forte1.png" id="3_yp0m2"]
+[ext_resource type="Texture2D" uid="uid://co2ggnco57fmt" path="res://imagens/personagens/carlos/carlos-forte2.png" id="4_rj6v1"]
+[ext_resource type="Texture2D" uid="uid://dg1q1ojqhe6sa" path="res://imagens/personagens/carlos/carlos-fraco1.png" id="5_csff5"]
+[ext_resource type="Texture2D" uid="uid://cc0jq530o1ate" path="res://imagens/personagens/carlos/carlos-fraco2.png" id="6_n2u56"]
+[ext_resource type="Texture2D" uid="uid://g8jgkx7s44v7" path="res://imagens/personagens/carlos/carlos-normal1.png" id="7_384pd"]
+[ext_resource type="Texture2D" uid="uid://ucy8kak1dqcj" path="res://imagens/personagens/carlos/carlos-normal2.png" id="8_r6yg5"]
+[ext_resource type="Texture2D" uid="uid://dsa55d3x4r60t" path="res://imagens/personagens/lorena/lorena-forte1.png" id="9_e6580"]
+[ext_resource type="Texture2D" uid="uid://budumbelvhu41" path="res://imagens/personagens/lorena/lorena-forte2.png" id="10_tcsdo"]
+[ext_resource type="Texture2D" uid="uid://5yaxu6wer8sd" path="res://imagens/personagens/lorena/lorena-fraco1.png" id="11_bfg1s"]
+[ext_resource type="Texture2D" uid="uid://djfqy2gm6inc0" path="res://imagens/personagens/lorena/lorena-fraco2.png" id="12_tvmte"]
+[ext_resource type="Texture2D" uid="uid://cjjxgrkpi4mi4" path="res://imagens/personagens/lorena/lorena-normal1.png" id="13_ihv3m"]
+[ext_resource type="Texture2D" uid="uid://b6fqegug3coxb" path="res://imagens/personagens/lorena/lorena-normal2.png" id="14_4j0aj"]
+[ext_resource type="Texture2D" uid="uid://804nf7hsfh23" path="res://imagens/personagens/rogerio/rogerio_forte1.png" id="15_qm1va"]
+[ext_resource type="Texture2D" uid="uid://bkthoc8tx2ipj" path="res://imagens/personagens/rogerio/rogerio_forte2.png" id="16_nuc7o"]
+[ext_resource type="Texture2D" uid="uid://b1d6vtlf0llji" path="res://imagens/personagens/rogerio/rogerio_fraco1.png" id="17_38i2s"]
+[ext_resource type="Texture2D" uid="uid://bnpwbkqblnp6v" path="res://imagens/personagens/rogerio/rogerio_fraco2.png" id="18_l15lb"]
+[ext_resource type="Texture2D" uid="uid://c7cgdgooqvcin" path="res://imagens/personagens/rogerio/rogerio_normal1.png" id="19_488y1"]
+[ext_resource type="Texture2D" uid="uid://crpek03uys73o" path="res://imagens/personagens/rogerio/rogerio_normal2.png" id="20_xk35q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0wg"]
 size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uhwf"]
+atlas = ExtResource("3_yp0m2")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x6iw"]
+atlas = ExtResource("4_rj6v1")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dme5d"]
+atlas = ExtResource("5_csff5")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrvly"]
+atlas = ExtResource("6_n2u56")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btkfk"]
+atlas = ExtResource("7_384pd")
+region = Rect2(0, 0, 94, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkvla"]
+atlas = ExtResource("8_r6yg5")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi2c7"]
+atlas = ExtResource("9_e6580")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8nia"]
+atlas = ExtResource("10_tcsdo")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqwga"]
+atlas = ExtResource("11_bfg1s")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft17a"]
+atlas = ExtResource("12_tvmte")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4tna"]
+atlas = ExtResource("13_ihv3m")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krlhh"]
+atlas = ExtResource("14_4j0aj")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2618"]
+atlas = ExtResource("15_qm1va")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74ubg"]
+atlas = ExtResource("16_nuc7o")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rviam"]
+atlas = ExtResource("17_38i2s")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aufl2"]
+atlas = ExtResource("18_l15lb")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kjet"]
+atlas = ExtResource("19_488y1")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq45n"]
+atlas = ExtResource("20_xk35q")
+region = Rect2(0, 0, 96, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6vob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uhwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x6iw")
+}],
+"loop": true,
+"name": &"carlos_forte",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dme5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrvly")
+}],
+"loop": true,
+"name": &"carlos_fraco",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btkfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkvla")
+}],
+"loop": true,
+"name": &"carlos_normal",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi2c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8nia")
+}],
+"loop": true,
+"name": &"lorena_forte",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqwga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft17a")
+}],
+"loop": true,
+"name": &"lorena_fraco",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4tna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krlhh")
+}],
+"loop": true,
+"name": &"lorena_normal",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2618")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74ubg")
+}],
+"loop": true,
+"name": &"rogerio_forte",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rviam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aufl2")
+}],
+"loop": true,
+"name": &"rogerio_fraco",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kjet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq45n")
+}],
+"loop": true,
+"name": &"rogerio_normal",
+"speed": 2.0
+}]
 
 [node name="Node2D2" type="Node2D" unique_id=966840436]
 script = ExtResource("2_bsrsl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995142931]
+visible = false
 scale = Vector2(0.938, 1.875)
 texture = ExtResource("1_rihsh")
 
@@ -19,5 +212,11 @@ scale = Vector2(0.938, 1.875)
 [node name="hurtbox" type="CollisionShape2D" parent="Hurtbox2D2" unique_id=747823943]
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_ng0wg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1404100225]
+texture_filter = 1
+scale = Vector2(1.25, 2)
+sprite_frames = SubResource("SpriteFrames_s6vob")
+animation = &"rogerio_normal"
 
 [connection signal="area_entered" from="Hurtbox2D2" to="." method="_on_hurtbox_2d_2_area_entered"]

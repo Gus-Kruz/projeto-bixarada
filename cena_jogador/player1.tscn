@@ -202,6 +202,7 @@ animations = [{
 script = ExtResource("2_pqb02")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1995142931]
+visible = false
 scale = Vector2(0.93775, 1.875)
 texture = ExtResource("1_ng0wg")
 
@@ -217,7 +218,5 @@ texture_filter = 1
 scale = Vector2(1.25, 2)
 sprite_frames = SubResource("SpriteFrames_27wta")
 animation = &"rogerio_normal"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1913850617]
 
 [connection signal="area_entered" from="Hurtbox2D1" to="." method="_on_hurtbox_2d_1_area_entered"]

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var player1 = PersonagemDado.player1
+#@onready var player1 = PersonagemDado.player1
 
 var ataquefraco = preload("res://cena_jogador/ataque_fraco.tscn")
 var ataqueforte = preload("res://cena_jogador/ataque_forte.tscn")
@@ -14,13 +14,15 @@ var personagem
 
 @export var player2 : Node2D
 @onready var timer = get_node("../Timer")
+@onready var musica = get_node("../Timer2")
 @onready var sprite = get_node("../Sprite2D")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.position = Vector2(pos[0], pos[1])
 	tempo = 1
 	timer.start()
-	print(player1)
+	musica.play()
+	#print(player1)
 	
 func ataque_fraco(player_x, player_y):
 	var fraco = ataquefraco.instantiate()
@@ -48,10 +50,10 @@ signal morte1
 func _process(delta: float) -> void:
 	if self.position.x > player2.position.x:
 		orientacao = "esquerda"
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = false
 	else:
 		orientacao = "direita"
-		$Sprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = true
 	if morreu or player2.morreu:
 		return
 	if vida <= 0:
@@ -104,10 +106,12 @@ func _on_timer_timeout() -> void:
 	elif input == player2.input and input == "forte":
 		return
 	elif input == "cima":
+		$AnimatedSprite2D.play("carlos_normal")
 		pos[1] -= 120
 		await get_tree().create_timer(bpm).timeout
 		pos[1] += 120
 	elif input == "esquerda" and self.position.x > 60:
+		$AnimatedSprite2D.play("carlos_normal")
 		if player2.position.x == self.position.x - 120 and player2.input != "esquerda":
 			pos[0] -= 240
 		elif player2.position.x == self.position.x - 240 and player2.input == "direita":
@@ -115,6 +119,7 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] -= 120
 	elif input == "direita" and self.position.x < 1860:
+		$AnimatedSprite2D.play("carlos_normal")
 		if player2.position.x == self.position.x + 120 and player2.input != "direita":
 			pos[0] += 240
 		elif player2.position.x == self.position.x + 240 and player2.input == "esquerda":
@@ -122,8 +127,10 @@ func _on_timer_timeout() -> void:
 		else:
 			pos[0] += 120
 	elif input == "fraco" and player2.input != "forte":
+		$AnimatedSprite2D.play("carlos_fraco")
 		ataque_fraco(pos[0], pos[1])
 	elif input == "forte":
+		$AnimatedSprite2D.play("carlos_forte")
 		print("forte")
 		ataque_forte(pos[0], pos[1])
 	input = "nada"
