@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bcyltrhx2tevw"]
+
+[ext_resource type="PackedScene" uid="uid://ge8ksneh15bv" path="res://cena_jogador/player1.tscn" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://dtgjtyevdvwil" path="res://cena_jogador/ataque.tscn" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1532618862]
+
+[node name="Player" parent="." unique_id=966840436 instance=ExtResource("1_0e48y")]
+
+[node name="Ataque" parent="." unique_id=439587759 instance=ExtResource("2_epypp")]

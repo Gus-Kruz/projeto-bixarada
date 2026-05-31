@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0htd06rldr4f"]
+
+[ext_resource type="Texture2D" uid="uid://dfl2wq457iocl" path="res://cena_jogador/icon.svg" id="1_diblt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsyfq"]
+size = Vector2(128, 127.46667)
+
+[node name="Ataque" type="Node2D" unique_id=439587759]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=234665738]
+rotation = 1.5707964
+scale = Vector2(0.938, 1.875)
+texture = ExtResource("1_diblt")
+
+[node name="forte" type="Area2D" parent="Sprite2D" unique_id=1836755468]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/forte" unique_id=3858722]
+position = Vector2(-4.6600626e-08, -0.26666698)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_vsyfq")
