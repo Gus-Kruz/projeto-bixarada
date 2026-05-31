@@ -35,7 +35,7 @@ func muda_cor(estado,path):
 
 func muda_texto(palavra,path):
 	get_node("selecao-margin/players/player"+ path).text = palavra
-	
+
 func muda_nome_player(personagem):
 	if player1 == '':
 		var figura = ' '
