@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="projeto bixarada"
-run/main_scene="uid://c3c4wdfuye3h6"
+run/main_scene="uid://08qcvrg4821l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://cena_jogador/icon.svg"
 

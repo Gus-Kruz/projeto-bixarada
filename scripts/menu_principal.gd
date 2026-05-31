@@ -1,9 +1,9 @@
 extends Node2D
+const TRANSICAO =  preload("res://menu/transicao.tscn")
 
 var threshold = 670
 var is_six: bool = true
 var easter = 0
-var TRANSICAO = preload('res://menu/transicao.tscn')
 
 func transicao(caminho: String):
 	var transicao = TRANSICAO.instantiate()
@@ -12,6 +12,12 @@ func transicao(caminho: String):
 	fade.play('fade')
 	await fade.animation_finished
 	get_tree().change_scene_to_file(caminho)
+
+func _ready():
+	var transicao = TRANSICAO.instantiate()
+	add_child(transicao)
+	var fade = transicao.get_node("fade")
+	fade.play_backwards('fade')
 	
 func _on_jogar_pressed() -> void:
 	transicao('res://menu/selecao.tscn')
