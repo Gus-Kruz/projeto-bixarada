@@ -1,9 +1,9 @@
 extends Node
 
-@export var mean: float;
-@export var stdDev: float;
-#var mean = 48373
-#var stdDev = 25037
+#@export var mean: float;
+#@export var stdDev: float;
+var mean = 48373
+var stdDev = 70000
 func in_time(gameTime: int, inputTime: int):
 	'''
 	Recebe dois argumentos: gameTime, inputTime

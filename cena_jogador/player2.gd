@@ -36,7 +36,7 @@ func ataque_forte(player_x, player_y):
 	await get_tree().create_timer(bpm).timeout
 	forte.queue_free()
 var morreu = false
-
+var input = "nada"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if self.position.x > player1.position.x:
@@ -49,42 +49,57 @@ func _physics_process(delta: float) -> void:
 		return
 	if vida <= 0:
 		print("morreu")
-		morreu = true 
+		morreu = true
 	if Input.is_action_just_pressed("cima2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[1] -= 120
-			await get_tree().create_timer(bpm).timeout
-			pos[1] += 120
+			input = "cima"
 	if Input.is_action_just_pressed("esquerda2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[0] -= 120
+			input = "esquerda"
 	if Input.is_action_just_pressed("direita2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			pos[0] += 120
+			input = "direita"
 	if Input.is_action_just_pressed("fraco2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			ataque_fraco(pos[0], pos[1])
+			input = "fraco"
 	if Input.is_action_just_pressed("forte2"):
 		inputTimes.append(Time.get_ticks_usec())
 		if Ritmo.in_time(timerTimes[-1], inputTimes[-1]):
-			ataque_forte(pos[0], pos[1])
+			input = "forte"
 	self.position = Vector2(pos[0], pos[1])
 
-
+signal fraco
+signal forte
 func _on_hurtbox_2d_2_area_entered(area: Area2D) -> void:
 	if area.get_name() == "fraco":
 		print("fraco")
 		vida -= 10
 		print("player 2 " + str(vida))
+		fraco.emit()
 	elif area.get_name() == "forte":
 		print("forte")
 		vida -= 20
 		print("player 2 " + str(vida))
+		forte.emit()
 		
 func _on_timer_timeout() -> void:
 	timerTimes.append(Time.get_ticks_usec())
 	timer.start()
+	await get_tree().create_timer(0.07).timeout
+	if input == "cima":
+		pos[1] -= 120
+		await get_tree().create_timer(bpm-0.07).timeout
+		pos[1] += 120
+	if input == "esquerda":
+		pos[0] -= 120
+	if input == "direita":
+		pos[0] += 120
+	if input == "fraco":
+		ataque_fraco(pos[0], pos[1])
+	if input == "forte":
+		ataque_forte(pos[0], pos[1])
+	input = "nada"
