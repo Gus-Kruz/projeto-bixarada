@@ -1,10 +1,7 @@
 extends TextureRect
 
-#@onready var no_referencia = get_node('res://menu/selecao.tscn')
-#var player1 = no_referencia.player1
-#var player2 = no_referencia.player2
-var player1 = 'lorena'
-var player2 = 'carlos'
+var player1 = PersonagemDado.player1
+var player2 = PersonagemDado.player2
 var dialogo = [["erro", "Não era para vermos isso"]]
 
 func _ready() -> void:
