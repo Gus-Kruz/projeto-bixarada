@@ -12,17 +12,15 @@ config_version=5
 
 config/name="projeto bixarada"
 run/main_scene="uid://lcmnq7wb42ch"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://cena_jogador/icon.svg"
 
 [autoload]
 
 Ritmo="*uid://f4vtqe5ehbar"
 DialogueManager="*uid://d0jf3qp0sq2l2"
-PersonagemDado="*uid://cwa8os2ci6p4u"
-Config="*uid://clna3opl5k6pb"
-
 PersonagemDado="*uid://o2cgg8ihfwcr"
+Config="*uid://clna3opl5k6pb"
 
 [display]
 
